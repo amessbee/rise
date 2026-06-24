@@ -1,6 +1,6 @@
-# RISE — Research Internship Programme
+# RISE — Research Internship Program
 
-A **four-week mathematics research programme** for A-level students (ages 16–18), exploring graph theory, network controllability, combinatorics, and discrete geometry through hands-on exploration, open problems, and interactive tools.
+A **four-week mathematics research program** for A-level students (ages 16–18), exploring graph theory, network controllability, combinatorics, and discrete geometry through hands-on exploration, open problems, and interactive tools.
 
 🌐 **Live site:** [amessbee.github.io/rise](https://amessbee.github.io/rise)
 
@@ -8,12 +8,12 @@ A **four-week mathematics research programme** for A-level students (ages 16–1
 
 ## What is RISE?
 
-RISE introduces students with no university mathematics background to **active research problems** — questions that professional mathematicians are still working on. By the end of the programme, every student can explain an open problem, state a theorem they have proved themselves, and deliver a polished 12–15 minute research presentation.
+RISE introduces students with no university mathematics background to **active research problems** — questions that professional mathematicians are still working on. By the end of the program, every student can explain an open problem, state a theorem they have proved themselves, and deliver a polished 12–15 minute research presentation.
 
 **Core mathematical content:**
 | Track | Topics |
 |-------|--------|
-| Graphs & Networks | Graph theory, Euler's theorem, planarity, colouring |
+| Graphs & Networks | Graph theory, Euler's theorem, planarity, coloring |
 | Network Controllability | Zero forcing sets, the forcing game, propagation sequences |
 | Combinatorics | Sequences, Erdős–Szekeres theorem, PMI sequences |
 | Discrete Geometry | Centerpoint theorem, Helly's theorem, Tukey depth |
@@ -21,7 +21,7 @@ RISE introduces students with no university mathematics background to **active r
 
 ---
 
-## Programme Structure
+## Program Structure
 
 4 weeks × 4 days × 4 hours = **64 hours** of contact time.
 
@@ -44,7 +44,7 @@ Printable A4 handouts, one per topic. Each contains definitions, worked examples
 |---------|-------|-----------|
 | [Survey](handouts/survey.md) | Background assessment | — |
 | [Networks Intro](handouts/networks_intro.md) | Graphs, trees, planarity | Euler's theorem, V−E+F=2 |
-| [Zero Forcing](handouts/zero_forcing.md) | Zero forcing sets and game | Z(G) characterises controllability |
+| [Zero Forcing](handouts/zero_forcing.md) | Zero forcing sets and game | Z(G) characterizes controllability |
 | [Sequences & PMI](handouts/sequences_pmi.md) | Subsequences, Erdős–Szekeres | Any mn+1 elements → long monotone run |
 | [Centerpoint](handouts/centerpoint.md) | Centerpoint theorem | Every point cloud has a "robust centre" |
 | [Presentation Guide](handouts/presentation_guide.md) | Research communication | Four-act structure, slide design, Q&A |
@@ -57,9 +57,9 @@ Run directly in your browser — no installation required.
 
 | Demo | What it does |
 |------|-------------|
-| [🎮 Zero Forcing Game](interactive/zero_forcing_game.html) | Colour vertices blue and simulate the forcing propagation on paths, cycles, grids, stars, and the Petersen graph |
+| [🎮 Zero Forcing Game](interactive/zero_forcing_game.html) | Color vertices blue and simulate the forcing propagation on paths, cycles, grids, stars, and the Petersen graph |
 | [📊 PMI Grid Explorer](interactive/pmi_grid.html) | Explore zero forcing propagation sequences on grid graphs and see their 2D monotone structure |
-| [📍 Centerpoint Visualiser](interactive/centerpoint.html) | Add points by clicking, then see the coordinatewise median, true centerpoint, and Tukey depth heatmap |
+| [📍 Centerpoint Visualizer](interactive/centerpoint.html) | Add points by clicking, then see the coordinatewise median, true centerpoint, and Tukey depth heatmap |
 | [🔢 Sequences & Patience Sort](interactive/sequences.html) | Enter a sequence and watch patience sorting animate the LIS discovery step by step |
 
 ---
@@ -80,7 +80,7 @@ Open any notebook in **Google Colab** (no installation needed) or run locally wi
 
 The six student coordinators are: **Danish, Uzayr, Nimra, Ahsan, Maaz, Basit**.
 
-Each of the 16 programme days has a host slot in [plan.md](plan.md). To claim a day:
+Each of the 16 program days has a host slot in [plan.md](plan.md). To claim a day:
 1. Open `plan.md`
 2. Find the day you want to host
 3. Replace `—` in the `> **Host:** —` line with your name
@@ -106,7 +106,7 @@ rise/
 ├── interactive/
 │   ├── zero_forcing_game.html       ← browser-based zero forcing game
 │   ├── pmi_grid.html                ← PMI propagation sequence explorer
-│   ├── centerpoint.html             ← centerpoint & Tukey depth visualiser
+│   ├── centerpoint.html             ← centerpoint & Tukey depth visualizer
 │   └── sequences.html               ← patience sorting & LIS animator
 └── notebooks/
     ├── zero_forcing.ipynb
@@ -118,7 +118,7 @@ rise/
 
 ## Credits
 
-Programme designed by the research group of [Professor Name], [University].  
+Program designed by **[Dr. Mudassir Shabbir](https://sites.google.com/view/mudassirshabbir)**, Theory Group, Department of Computer Science, LUMS.  
 Student coordinators: Danish, Uzayr, Nimra, Ahsan, Maaz, Basit.
 
-Mathematical content covers research in graph controllability, zero forcing sets, and discrete geometry. Interactive tools and notebooks were developed as part of the RISE programme.
+Mathematical content covers active research in graph controllability, zero forcing sets, and discrete geometry conducted at the Theory Group, LUMS. Interactive tools and notebooks were developed as part of the RISE program.

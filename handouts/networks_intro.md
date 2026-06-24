@@ -2,7 +2,7 @@
 
 
 ---
-[← Programme Home](../index.md) | [Next: Zero Forcing →](zero_forcing.md) | [🎮 Interactive Game](../interactive/zero_forcing_game.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/zero_forcing.ipynb)
+[← Program Home](../index.md) | [Next: Zero Forcing →](zero_forcing.md) | [🎮 Interactive Game](../interactive/zero_forcing_game.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/zero_forcing.ipynb)
 
 ---
 
@@ -341,7 +341,7 @@ Trees arise everywhere — family trees, file-system directories, parse trees in
      9 vertices, 8 edges.
      Remove all leaves → what remains is a path (the "spine").
 
-     Labelled version:
+     Labeled version:
 
           L1  L2       L5
            \  │         │
@@ -469,7 +469,7 @@ These mathematical definitions abstract an enormous variety of real phenomena:
 
 **Biological networks:** Vertices = proteins; edges = biochemical interactions. Identifying "hub" proteins (high degree) may reveal drug targets.
 
-**Transport networks:** Vertices = cities; edges = roads, flights, or rail lines. Optimising routes (the Travelling Salesman Problem) is computationally hard.
+**Transport networks:** Vertices = cities; edges = roads, flights, or rail lines. Optimising routes (the Traveling Salesman Problem) is computationally hard.
 
 **Key insight:** The *same* mathematical tools apply to all of these, even though the underlying systems are completely different.
 
@@ -487,7 +487,7 @@ A town has 8 people. Is it possible for every person to be friends with exactly 
 Prove that every tree on n ≥ 2 vertices has at least two vertices of degree 1 (called **leaves**). *(Hint: consider the longest path in the tree.)*
 
 **Puzzle 4 (hard):**  
-A graph is called **bipartite** if its vertices can be coloured with two colours (say, red and blue) such that every edge connects a red vertex to a blue vertex. Prove that a graph is bipartite if and only if it contains no cycle of odd length.
+A graph is called **bipartite** if its vertices can be colored with two colors (say, red and blue) such that every edge connects a red vertex to a blue vertex. Prove that a graph is bipartite if and only if it contains no cycle of odd length.
 
 **Open Problem (describe, don't solve):**  
 The **graph isomorphism problem** asks: given two graphs G and H, are they the "same" up to relabelling of vertices? No efficient (polynomial-time) algorithm is known. It is one of the few natural computational problems not known to be either easy (P) or hard (NP-complete).
@@ -507,4 +507,4 @@ The **graph isomorphism problem** asks: given two graphs G and H, are they the "
 
 ---
 
-[← Programme Home](../index.md) | [Next: Zero Forcing →](zero_forcing.md)
+[← Program Home](../index.md) | [Next: Zero Forcing →](zero_forcing.md)

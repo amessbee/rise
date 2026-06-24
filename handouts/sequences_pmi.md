@@ -2,7 +2,7 @@
 
 
 ---
-[← Zero Forcing](zero_forcing.md) | [Programme Home](../index.md) | [Next: Centerpoint →](centerpoint.md) | [🔢 Sequences Demo](../interactive/sequences.html) | [📊 PMI Grid](../interactive/pmi_grid.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/sequences_erdos.ipynb)
+[← Zero Forcing](zero_forcing.md) | [Program Home](../index.md) | [Next: Centerpoint →](centerpoint.md) | [🔢 Sequences Demo](../interactive/sequences.html) | [📊 PMI Grid](../interactive/pmi_grid.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/sequences_erdos.ipynb)
 
 ---
 
@@ -467,7 +467,7 @@ Both x and y coordinates strictly increase along each arrow. ✓
 
 Recall from the zero forcing handout: every valid zero forcing propagation produces a **propagation sequence** — an ordering of the vertices recording when they turn blue.
 
-For a **path graph** Pₙ with vertices labelled 1, 2, ..., n:
+For a **path graph** Pₙ with vertices labeled 1, 2, ..., n:
 - Starting from vertex 1, the propagation sequence is (1, 2, 3, ..., n).
 - This is an **increasing** sequence.
 
@@ -475,7 +475,7 @@ But what about more complex graphs?
 
 ### Propagation Sequences for Grid Graphs
 
-For the 3×3 grid with vertices labelled by (row, column):
+For the 3×3 grid with vertices labeled by (row, column):
 
 ```
 (1,1) — (1,2) — (1,3)
@@ -531,7 +531,7 @@ Zooming out — the full row sequence is non-decreasing:
   Col index:   1  2  3  1  2  3  1  2  3
                (resets each time the row increments)
 
-Visualising propagation wave (blue cells marked ■, uncoloured ·):
+Visualising propagation wave (blue cells marked ■, uncolored ·):
 
   After step 3 (top row complete):    After step 6 (middle row complete):
 
@@ -556,8 +556,8 @@ The "wave" sweeps row by row — a 2D monotone pattern.
 
 Informally, a **PMI (Propagation Monotone Increasing) sequence** is a sequence (of vertices from a graph, or of 2D points) satisfying a certain 2D monotonicity condition that:
 
-1. Generalises the notion of an increasing sequence (in 1D, PMI = simply increasing).
-2. Exactly characterises valid zero forcing propagation orders for certain graphs.
+1. Generalizes the notion of an increasing sequence (in 1D, PMI = simply increasing).
+2. Exactly characterizes valid zero forcing propagation orders for certain graphs.
 3. Has a combinatorial structure that can be studied independently, connecting to the Erdős–Szekeres framework.
 
 ### Why This Matters
@@ -593,4 +593,4 @@ The connection between PMI sequences and network controllability gives us a **ne
 
 ---
 
-[← Zero Forcing](zero_forcing.md) | [Programme Home](../index.md) | [Next: Centerpoint →](centerpoint.md)
+[← Zero Forcing](zero_forcing.md) | [Program Home](../index.md) | [Next: Centerpoint →](centerpoint.md)

@@ -1,6 +1,8 @@
-# Research Lab Internship — Four-Week Program
-## Coordinator's Detailed Guide
+# RISE — Research Internship Program
+## Coordinator's Guide · Theory Group, LUMS
 
+**Instructor:** Dr. Mudassir Shabbir, Theory Group, Department of Computer Science, LUMS  
+**Student Coordinators:** Danish · Uzayr · Nimra · Ahsan · Maaz · Basit  
 **Duration:** 4 weeks × 4 days × 4 hours = 64 hours of contact time  
 **Schedule:** Monday–Thursday, 9:00–13:00 (with a 15-min break around 10:45)  
 **Audience:** 3–4 A-level students (ages 16–18)  
@@ -19,7 +21,7 @@ The program has three tracks that build progressively:
 | **3** | Sequences and Geometry | Erdős–Szekeres, PMI sequences, centerpoint theorem |
 | **4** | Communicating Research | Scientific storytelling, slide and poster design, talk delivery, full rehearsal |
 
-**Weeks 1–3** each end on Thursday with informal mini-presentations (whiteboard only, 5–8 min). **Week 4** builds toward a polished external presentation — the deliverable that follows the programme.
+**Weeks 1–3** each end on Thursday with informal mini-presentations (whiteboard only, 5–8 min). **Week 4** builds toward a polished external presentation — the deliverable that follows the program.
 
 ---
 
@@ -47,7 +49,7 @@ Each session is led by one student coordinator. **Claim a day** by replacing `�
 |-----|------|-------|---------------|------|
 | 1 | W1 Mon | Welcome, Survey, Graph Introduction | [Networks Intro](handouts/networks_intro.md) | — |
 | 2 | W1 Tue | Graph Families, Trees, Bipartite | [Networks Intro](handouts/networks_intro.md) | — |
-| 3 | W1 Wed | Colouring, Planarity, Euler's Formula | [Networks Intro](handouts/networks_intro.md) | — |
+| 3 | W1 Wed | Coloring, Planarity, Euler's Formula | [Networks Intro](handouts/networks_intro.md) | — |
 | 4 | W1 Thu | Problem Session + Mini-Presentations | — | — |
 | 5 | W2 Mon | Controllability Motivation + Zero Forcing Intro | [Zero Forcing](handouts/zero_forcing.md) · [Game](interactive/zero_forcing_game.html) | — |
 | 6 | W2 Tue | Computing Z(G): Bounds and Examples | [Zero Forcing](handouts/zero_forcing.md) · [Notebook](notebooks/zero_forcing.ipynb) | — |
@@ -68,7 +70,7 @@ Each session is led by one student coordinator. **Claim a day** by replacing `�
 
 ### Week 1 Goals
 - Understand the formal definition of a graph and be comfortable with basic vocabulary.
-- Recognise graphs in real-world contexts.
+- Recognize graphs in real-world contexts.
 - Know the key families: paths, cycles, complete graphs, trees, bipartite graphs.
 - Be able to prove simple graph properties using the Handshaking Lemma and basic arguments.
 - Have encountered Euler's theorem and a few coloring/planarity ideas.
@@ -116,7 +118,7 @@ Show or sketch three images:
 
 Tell the story of Königsberg (1736): four land masses, seven bridges, the residents' puzzle.
 
-Draw the map on the board, then redraw it as a graph (land masses → vertices, bridges → edges). Emphasise: **the graph captures only the structure that matters for the question**. Distance, shape, and colour of bridges are irrelevant.
+Draw the map on the board, then redraw it as a graph (land masses → vertices, bridges → edges). Emphasize: **the graph captures only the structure that matters for the question**. Distance, shape, and color of bridges are irrelevant.
 
 State and explore Euler's theorem:
 
@@ -143,7 +145,7 @@ Distribute **Handout: survey.md** during break so students can fill it in during
 
 **Problem Set 1A:**
 
-1. Draw all non-isomorphic graphs on 4 vertices. (Two graphs are isomorphic if one can be relabelled to match the other.) How many are there?
+1. Draw all non-isomorphic graphs on 4 vertices. (Two graphs are isomorphic if one can be relabeled to match the other.) How many are there?
 
 2. A party has 10 people. Each person shakes hands with some others. Prove that at least two people shook the same number of hands.  
    *(Hint: what are the possible numbers of handshakes? Can someone shake 0 hands and someone else shake 9 hands simultaneously?)*
@@ -213,13 +215,13 @@ Distribute **Handout: networks_intro.md**.
 
 **Bipartite graphs (20 min):**
 
-A graph is **bipartite** if vertices can be 2-coloured (red/blue) so every edge connects red to blue.
+A graph is **bipartite** if vertices can be 2-colored (red/blue) so every edge connects red to blue.
 
 Examples: paths, even cycles, trees. Non-examples: odd cycles, K₃.
 
 Theorem (state without proof): A graph is bipartite if and only if it contains no odd-length cycle.
 
-*Activity:* Draw several graphs. Students identify which are bipartite and find a 2-colouring if so.
+*Activity:* Draw several graphs. Students identify which are bipartite and find a 2-coloring if so.
 
 ---
 
@@ -262,7 +264,7 @@ Key facts (prove or sketch proofs as appropriate):
 
 ---
 
-### Day 3 (Week 1, Wednesday) — Graph Properties and Colouring
+### Day 3 (Week 1, Wednesday) — Graph Properties and Coloring
 
 > **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
@@ -270,31 +272,31 @@ Key facts (prove or sketch proofs as appropriate):
 
 ---
 
-**0:00–0:30 — Warm-up: Map Colouring Puzzle**
+**0:00–0:30 — Warm-up: Map Coloring Puzzle**
 
-Show a map with 8 regions. Challenge: colour the map so no two adjacent regions share the same colour. What is the minimum number of colours needed?
+Show a map with 8 regions. Challenge: color the map so no two adjacent regions share the same color. What is the minimum number of colors needed?
 
-This naturally motivates **graph colouring**: create a graph where regions are vertices and adjacency between regions becomes edges. Colouring the map = colouring the graph.
+This naturally motivates **graph coloring**: create a graph where regions are vertices and adjacency between regions becomes edges. Coloring the map = coloring the graph.
 
 ---
 
-**0:30–1:45 — Main Session: Graph Colouring and Planarity**
+**0:30–1:45 — Main Session: Graph Coloring and Planarity**
 
-**Graph colouring (40 min):**
+**Graph coloring (40 min):**
 
-**Chromatic number χ(G):** The minimum number of colours needed to colour the vertices of G so no two adjacent vertices share the same colour.
+**Chromatic number χ(G):** The minimum number of colors needed to color the vertices of G so no two adjacent vertices share the same color.
 
 Examples:
-- Path Pₙ: χ = 2 (alternating colours)
+- Path Pₙ: χ = 2 (alternating colors)
 - Odd cycle C₅: χ = 3
 - Complete graph Kₙ: χ = n
 - Bipartite graph: χ = 2 (that's the definition!)
 
-**Greedy colouring:** Assign each vertex the smallest colour not used by any already-coloured neighbour. This gives at most Δ(G) + 1 colours, where Δ(G) is the maximum degree.
+**Greedy coloring:** Assign each vertex the smallest color not used by any already-colored neighbor. This gives at most Δ(G) + 1 colors, where Δ(G) is the maximum degree.
 
 **Theorem (Brook's, 1941, state only):** For any connected graph G that is not a complete graph or an odd cycle: χ(G) ≤ Δ(G).
 
-**The Four Colour Theorem (state and discuss):** Every planar graph (one that can be drawn without edge crossings) can be 4-coloured. Proved by Appel and Haken in 1976 — the first major theorem proved with substantial computer assistance. This was controversial at the time. Discuss: what counts as a mathematical proof?
+**The Four Color Theorem (state and discuss):** Every planar graph (one that can be drawn without edge crossings) can be 4-colored. Proved by Appel and Haken in 1976 — the first major theorem proved with substantial computer assistance. This was controversial at the time. Discuss: what counts as a mathematical proof?
 
 **Planarity (35 min):**
 
@@ -330,7 +332,7 @@ Verify with examples: triangle (V=3, E=3, F=2 → 3-3+2=2 ✓), cube graph (V=8,
 
 4. Use Euler's formula to prove that K₃,₃ is non-planar. *(Hint: in a bipartite graph, every face is bounded by at least 4 edges, since there are no triangles.)*
 
-5. *(Challenge)* The **chromatic polynomial** P(G, k) counts the number of proper k-colourings of G. For a tree Tₙ on n vertices, show P(Tₙ, k) = k(k-1)ⁿ⁻¹. *(Hint: root the tree and colour greedily from the root down.)*
+5. *(Challenge)* The **chromatic polynomial** P(G, k) counts the number of proper k-colorings of G. For a tree Tₙ on n vertices, show P(Tₙ, k) = k(k-1)ⁿ⁻¹. *(Hint: root the tree and color greedily from the root down.)*
 
 ---
 
@@ -338,16 +340,16 @@ Verify with examples: triangle (V=3, E=3, F=2 → 3-3+2=2 ✓), cube graph (V=8,
 
 Brief introduction to two famous algorithms (describe informally, no code required):
 
-**Breadth-First Search (BFS):** Start at a vertex. Explore all neighbours, then neighbours-of-neighbours, etc. Gives shortest paths. Think of it as "rings spreading outward."
+**Breadth-First Search (BFS):** Start at a vertex. Explore all neighbors, then neighbors-of-neighbors, etc. Gives shortest paths. Think of it as "rings spreading outward."
 
 **Depth-First Search (DFS):** Explore as far as possible down one branch before backtracking. Think of it as "always take the first new turn you see."
 
 *Application:* BFS gives the distance (shortest path length) between any two vertices. The diameter of the graph is the maximum BFS distance over all starting vertices.
 
-**Preview of Week 2:** Next week we ask: if you want to *control* a network — steer its behaviour to a target state — which vertices do you need direct access to, and how few can you get away with? This will lead us to the zero forcing game.
+**Preview of Week 2:** Next week we ask: if you want to *control* a network — steer its behavior to a target state — which vertices do you need direct access to, and how few can you get away with? This will lead us to the zero forcing game.
 
 **Homework:** H3 and H4 from networks_intro.md, plus:  
-*Bonus:* Find a planar graph where χ(G) = 4 and ω(G) = 3 (a graph needing 4 colours but containing no K₄). *(Hint: Grötzsch graph, or any odd-wheel.)*
+*Bonus:* Find a planar graph where χ(G) = 4 and ω(G) = 3 (a graph needing 4 colors but containing no K₄). *(Hint: Grötzsch graph, or any odd-wheel.)*
 
 ---
 
@@ -364,7 +366,7 @@ Brief introduction to two famous algorithms (describe informally, no code requir
 Students choose one of the following investigation threads:
 
 **Thread A — Graph Isomorphism:**  
-Two graphs are isomorphic if one can be relabelled to match the other. How do you tell quickly if two graphs are not isomorphic? (Compare degree sequences, number of triangles, diameter, etc.) How do you tell they *are* isomorphic? This is a famously hard problem — no efficient general algorithm is known.
+Two graphs are isomorphic if one can be relabeled to match the other. How do you tell quickly if two graphs are not isomorphic? (Compare degree sequences, number of triangles, diameter, etc.) How do you tell they *are* isomorphic? This is a famously hard problem — no efficient general algorithm is known.
 - Task: Find two non-isomorphic graphs with the same degree sequence. Try to find graphs that are hard to distinguish.
 
 **Thread B — Ramsey Theory:**  
@@ -430,19 +432,19 @@ This is the zero forcing intuition. Discuss informally.
 
 **Example 1 — Influencing a Social Network (30 min)**
 
-Consider a simplified social network of 12 users as a graph. Each user holds a binary opinion (0 or 1). The influence rule: a user flips their opinion to match the majority of their neighbours if that majority is strong enough.
+Consider a simplified social network of 12 users as a graph. Each user holds a binary opinion (0 or 1). The influence rule: a user flips their opinion to match the majority of their neighbors if that majority is strong enough.
 
 A political campaign can "buy" 3 accounts to hold a fixed opinion (1). The goal: through social dynamics, eventually all users adopt opinion 1.
 
 *Question:* Which 3 accounts gives maximum eventual influence?
 
-Draw a sample graph on the board. Let students propose which 3 vertices to colour. Simulate the dynamics. Notice that a badly chosen set of 3 gets "stuck" — the dynamics stall before everyone is converted. A well-chosen set propagates to everyone.
+Draw a sample graph on the board. Let students propose which 3 vertices to color. Simulate the dynamics. Notice that a badly chosen set of 3 gets "stuck" — the dynamics stall before everyone is converted. A well-chosen set propagates to everyone.
 
 *Key insight:* The structure of the graph determines which sets work. This is a controllability question.
 
 **Example 2 — Swarm of Robots (20 min)**
 
-You have n drones in the air. Each drone adjusts its velocity to match the average velocity of its neighbours in the communication graph. You have direct radio control over only k drones.
+You have n drones in the air. Each drone adjusts its velocity to match the average velocity of its neighbors in the communication graph. You have direct radio control over only k drones.
 
 *Question:* What is the minimum k such that you can steer the entire swarm to any target formation?
 
@@ -450,7 +452,7 @@ This is a linear dynamical system. The answer depends on Z(G), the zero forcing 
 
 **Example 3 — The Mexican Wave (15 min)**
 
-In a football stadium, each person stands if both their immediate left and right neighbours are already standing. A coordinator seeds the wave by getting a group to stand simultaneously.
+In a football stadium, each person stands if both their immediate left and right neighbors are already standing. A coordinator seeds the wave by getting a group to stand simultaneously.
 
 Draw the stadium as a cycle graph (seats in a ring). If the seeded group is S, simulate the wave.
 
@@ -466,13 +468,13 @@ Draw the stadium as a cycle graph (seats in a ring). If the seeded group is S, s
 
 Distribute **Handout: zero_forcing.md**.
 
-**The Colour Change Rule:**  
-A **blue** vertex with exactly **one white** neighbour forces that neighbour to become blue.
+**The Color Change Rule:**  
+A **blue** vertex with exactly **one white** neighbor forces that neighbor to become blue.
 
 Walk through examples: P₅ (starting from one endpoint), C₄, K₄, K₁,₃. Students follow along and predict the next step before the coordinator reveals it.
 
 **Definitions:**
-- **Zero forcing set S:** Starting with S blue, repeated application of the colour change rule eventually colours all vertices blue.
+- **Zero forcing set S:** Starting with S blue, repeated application of the color change rule eventually colors all vertices blue.
 - **Zero forcing number Z(G):** Minimum |S| over all zero forcing sets S.
 
 ---
@@ -523,7 +525,7 @@ To show Z(G) ≤ k, we exhibit a zero forcing set of size k. To show Z(G) ≥ k,
 
 **Lower bound technique 1 — The Degree Argument (25 min):**
 
-If every vertex in G has degree ≥ 3, then after forcing begins, a blue vertex with one white neighbour means all its other d(v)-1 ≥ 2 neighbours are already blue. This constrains propagation heavily.
+If every vertex in G has degree ≥ 3, then after forcing begins, a blue vertex with one white neighbor means all its other d(v)-1 ≥ 2 neighbors are already blue. This constrains propagation heavily.
 
 Formal bound: Z(G) ≥ δ(G) in some cases — but not always. Find an example where Z(G) < δ(G).
 
@@ -541,7 +543,7 @@ For trees, Z(T) equals the **path cover number** P(T) — the minimum number of 
 
 Intuition: each path in the cover corresponds to one "chain" of forcing.
 
-*Example:* A star K₁,₅ has path cover number 5 (each leaf is its own path), so Z(K₁,₅) = 5... wait, we said Z(K₁,ₙ) = n-1. Recheck! With 4 leaves blue, the hub has exactly 1 white neighbour. So Z(K₁,ₙ) = n-1.
+*Example:* A star K₁,₅ has path cover number 5 (each leaf is its own path), so Z(K₁,₅) = 5... wait, we said Z(K₁,ₙ) = n-1. Recheck! With 4 leaves blue, the hub has exactly 1 white neighbor. So Z(K₁,ₙ) = n-1.
 
 This corrects the path cover formula — the centre is also a path endpoint. Work through the star carefully.
 
@@ -563,7 +565,7 @@ This corrects the path cover formula — the centre is also a path endpoint. Wor
 
 4. Prove: if G is a connected graph and v is a cut vertex, then Z(G) ≥ 2. *(Hint: consider what happens when propagation needs to "cross" through v.)*
 
-5. *(Challenge)* Show that the zero forcing number is not monotone with respect to subgraphs: find graphs H ⊆ G where Z(H) > Z(G). Why does this make zero forcing harder to analyse than graph colouring?
+5. *(Challenge)* Show that the zero forcing number is not monotone with respect to subgraphs: find graphs H ⊆ G where Z(H) > Z(G). Why does this make zero forcing harder to analyze than graph coloring?
 
 ---
 
@@ -587,7 +589,7 @@ is **fully controllable** iff the controllability matrix [B | AB | A²B | ... | 
 
 This is a deep result. Students do not need to prove it, but they should see why the zero forcing rule is a natural "simulation" of the matrix rank condition.
 
-*Discussion:* Why does a combinatorial rule (colouring) capture an algebraic condition (rank)?
+*Discussion:* Why does a combinatorial rule (coloring) capture an algebraic condition (rank)?
 
 **Homework:** H6 from zero_forcing.md.
 
@@ -603,7 +605,7 @@ This is a deep result. Students do not need to prove it, but they should see why
 
 **0:00–0:30 — Warm-up: Directed Zero Forcing**
 
-Introduce the idea briefly: what if edges in G have a direction (directed graph / digraph)? The forcing rule can be adapted: a blue vertex forces its white out-neighbour only if it is the only white out-neighbour.
+Introduce the idea briefly: what if edges in G have a direction (directed graph / digraph)? The forcing rule can be adapted: a blue vertex forces its white out-neighbor only if it is the only white out-neighbor.
 
 Does Z change for directed paths? Directed cycles? Explore on the board.
 
@@ -616,7 +618,7 @@ Does Z change for directed paths? Directed cycles? Explore on the board.
 - **Setter** wants to zero force G with as few initial blue vertices as possible.
 - **Blocker** can, on each round, protect one vertex (that vertex cannot be forced this round even if it "should" be).
 
-Play alternates: Setter picks a vertex to add to the initial set (or has already fixed S before the game starts — variants exist). Then Blocker picks a vertex to protect. Then the colour change rule is applied (skipping protected vertices). Repeat until all vertices are blue (Setter wins) or propagation stalls forever (Blocker wins).
+Play alternates: Setter picks a vertex to add to the initial set (or has already fixed S before the game starts — variants exist). Then Blocker picks a vertex to protect. Then the color change rule is applied (skipping protected vertices). Repeat until all vertices are blue (Setter wins) or propagation stalls forever (Blocker wins).
 
 **Play on a 4×4 grid (on the board):**
 
@@ -652,10 +654,10 @@ S = {1}
 Propagation sequence: (1, 2, 3, 4, 5) — increasing sequence
 ```
 
-**Example on the 3×3 grid** (vertices labelled (row, column)):
+**Example on the 3×3 grid** (vertices labeled (row, column)):
 
 Start with top row blue: S = {(1,1), (1,2), (1,3)}. Propagation:
-- (1,1) forces (2,1) (only white neighbour)
+- (1,1) forces (2,1) (only white neighbor)
 - (1,2) forces (2,2)
 - (1,3) forces (2,3)
 - (2,1) forces (3,1)
@@ -776,7 +778,7 @@ Trace carefully through the full example. Count piles. Verify it equals LIS leng
 
 State the theorem. Do two worked examples illustrating the bound is tight. Then give the full pigeonhole proof (see Handout sequences_pmi.md Section 2 for the complete proof — walk through it on the board step by step).
 
-Emphasise the structure of the proof: assign a label to each element, observe that labels from a bounded set, apply pigeonhole, derive a contradiction.
+Emphasize the structure of the proof: assign a label to each element, observe that labels from a bounded set, apply pigeonhole, derive a contradiction.
 
 ---
 
@@ -837,9 +839,9 @@ For path graphs, propagation sequences are exactly increasing sequences (in the 
 **Step 2: The 2D picture (25 min)**
 
 For grid graphs:
-- Vertices are labelled by (row, column) pairs.
+- Vertices are labeled by (row, column) pairs.
 - A propagation sequence is a sequence of these 2D labels.
-- The condition "blue vertex with exactly one white neighbour forces it" translates into a constraint on the order of the 2D labels.
+- The condition "blue vertex with exactly one white neighbor forces it" translates into a constraint on the order of the 2D labels.
 
 **Step 3: PMI — Formal Definition (30 min)**
 
@@ -886,7 +888,7 @@ Present 2–3 open problems from the professor's research that the students can 
 **Open Problem 2:** [OPEN PROBLEM FROM PROFESSOR'S RESEARCH]
 
 **Open Problem 3 (standard, safe):**
-> Characterise all graphs G for which Z(G) = Z(G - e) for every edge e — that is, graphs where removing any single edge doesn't change the zero forcing number.
+> Characterize all graphs G for which Z(G) = Z(G - e) for every edge e — that is, graphs where removing any single edge doesn't change the zero forcing number.
 
 Students discuss which open problem they find most compelling and why.
 
@@ -906,7 +908,7 @@ Students discuss which open problem they find most compelling and why.
 
 Present the problem cold — no hints.
 
-> One thousand robots are distributed across a 500km × 500km region of Mars. Each robot knows its precise (x, y) GPS coordinate. The robots need to collectively agree on and transmit a **single (x, y) point** back to Earth that best summarises where they are. Bandwidth is so limited that only one point can be sent per day, and no robot knows any other robot's location (they can only agree on a protocol in advance).
+> One thousand robots are distributed across a 500km × 500km region of Mars. Each robot knows its precise (x, y) GPS coordinate. The robots need to collectively agree on and transmit a **single (x, y) point** back to Earth that best summarizes where they are. Bandwidth is so limited that only one point can be sent per day, and no robot knows any other robot's location (they can only agree on a protocol in advance).
 >
 > What point should they send?
 
@@ -924,7 +926,7 @@ Distribute **Handout: centerpoint.md**.
 
 **Act 1 — The Failure of the Average (15 min)**
 
-Work through the outlier counterexample from the handout. Emphasise the concept of **breakdown point**: the average's breakdown point is 0 (one bad point ruins it), the median's is 50%.
+Work through the outlier counterexample from the handout. Emphasize the concept of **breakdown point**: the average's breakdown point is 0 (one bad point ruins it), the median's is 50%.
 
 **Act 2 — The Median in 1D (15 min)**
 
@@ -985,7 +987,7 @@ Discuss applications of the centerpoint:
 
 1. *Algorithmic Centerpoint:* Find a centerpoint of n points in ℝ² in O(n) time.
 
-2. *Colourful Centerpoint:* If each point is coloured one of 3 colours with n/3 of each colour, must there be a "rainbow" centerpoint? (Every halfplane through it has points of all 3 colours.)
+2. *Colorful Centerpoint:* If each point is colored one of 3 colors with n/3 of each color, must there be a "rainbow" centerpoint? (Every halfplane through it has points of all 3 colors.)
 
 3. *First Selection Lemma (proved, but state it):* For n points in ℝ², some point of ℝ² lies inside at least cn³ triangles formed by the data points, where c > 1/27 is a universal constant. The best known c is approximately 1/27 — achieving exactly 1/27 is open.
 
@@ -1015,7 +1017,7 @@ Each student gives a 10–12 minute presentation. They may choose any topic from
 The coordinator and other students ask questions. Aim for mathematical depth over polish.
 
 **Suggested topics if students are unsure:**
-- Zero forcing on trees (characterise the zero forcing sets of a given tree)
+- Zero forcing on trees (characterize the zero forcing sets of a given tree)
 - The Erdős–Szekeres theorem: statement, proof, and tight example
 - Centerpoint theorem: the Mars motivation, why coordinatewise median fails, the theorem
 - The zero forcing game and game zero forcing number
@@ -1073,7 +1075,7 @@ The schedule is intentionally generous — each main session has room to run lon
 
 **Graphs:** Students often confuse "path" (no repeated vertices) with "walk" (repetition allowed). Be explicit about this distinction early. Also: "isomorphic" is conceptually hard — use physical analogies (same network, different labelling = same city map rotated and renamed).
 
-**Zero Forcing:** The forcing rule seems simple but students regularly misapply it — they try to force a vertex that has more than one white neighbour. Slow down, trace step by step, and have students narrate each forcing step aloud before writing it down.
+**Zero Forcing:** The forcing rule seems simple but students regularly misapply it — they try to force a vertex that has more than one white neighbor. Slow down, trace step by step, and have students narrate each forcing step aloud before writing it down.
 
 **Erdős–Szekeres:** The proof is elegant but the pigeonhole step is subtle (assigning (eᵢ, dᵢ) pairs). Work through it at least twice: once quickly, then very slowly with students narrating each line. The "tight example" (construction achieving exactly n²) is the best way to consolidate understanding.
 
@@ -1096,7 +1098,7 @@ Encourage students to circle "key steps" in their proofs — the one line that c
 
 ### Differentiating for Strong Students
 
-- Ask "can you generalise this to directed graphs?"
+- Ask "can you generalize this to directed graphs?"
 - Push on tight examples: not just proving the theorem but constructing extremal cases.
 - Introduce the Zero Forcing Conjecture (maximum nullity conjecture): for any graph G, Z(G) + M(G) = n where M(G) is the maximum nullity of a matrix from the "family" associated with G. This is open.
 - Introduce the connection to minimum rank problems (symmetric matrices with prescribed zero pattern).
@@ -1116,7 +1118,7 @@ Encourage students to circle "key steps" in their proofs — the one line that c
 - Understand the conventions and purpose of a scientific talk, poster, and short written summary.
 - Learn to identify the core narrative of their research experience and shape it for a non-expert audience.
 - Design clear, minimal slides or a poster with effective mathematical figures.
-- Practise delivery: pacing, signposting, handling questions, managing nerves.
+- Practice delivery: pacing, signposting, handling questions, managing nerves.
 - Produce a complete, rehearsed presentation ready for an external audience.
 
 ---
@@ -1161,7 +1163,7 @@ Distribute **Handout: presentation_guide.md**.
 | Poster | Displayed + 3–5 min pitches | Exhibition space | Conversational, own pace |
 | Blog post / write-up | Reading time 5–10 min | Online | Permanent, searchable |
 
-For this programme, students will prepare either a **12–15 minute slide talk** or a **poster with a 5-minute pitch**, depending on the follow-up event format. Both require the same underlying work: knowing your story.
+For this program, students will prepare either a **12–15 minute slide talk** or a **poster with a 5-minute pitch**, depending on the follow-up event format. Both require the same underlying work: knowing your story.
 
 **Part 2 — Anatomy of a Mathematical Talk (45 min):**
 
@@ -1204,8 +1206,8 @@ The hardest communication skill is compression. An elevator pitch is a 60–90 s
 **Structure of a good elevator pitch:**
 1. One sentence: the problem. ("We study how few controllers you need to steer a network.")
 2. One sentence: why it's hard. ("The answer depends on the graph structure in a subtle way.")
-3. One sentence: the key idea. ("We discovered that the minimum number equals the size of a special colouring game.")
-4. One sentence: one cool consequence. ("This means you can tell if a Twitter network is controllable just by playing a colouring puzzle on it.")
+3. One sentence: the key idea. ("We discovered that the minimum number equals the size of a special coloring game.")
+4. One sentence: one cool consequence. ("This means you can tell if a Twitter network is controllable just by playing a coloring puzzle on it.")
 
 **Workshop:**
 
@@ -1316,14 +1318,14 @@ The most powerful tool in a mathematics presentation is a well-drawn figure. A g
 
 Each student picks the single most important concept from their talk and draws the figure they would show to explain it. Requirements:
 - Must work on a whiteboard or as a simple slide diagram
-- Must be labelled (no unlabelled graphs)
+- Must be labeled (no unlabeled graphs)
 - Must have a one-sentence caption
 - Must work in black and white (if the venue projector is grey-scale)
 
 Students present their figure to the group and explain it in 2 minutes. Feedback: is the figure self-contained? Does the label help or clutter?
 
-**Common figures for this programme:**
-- A small graph with coloured (blue/white) vertices for zero forcing
+**Common figures for this program:**
+- A small graph with colored (blue/white) vertices for zero forcing
 - A sequence written out with the increasing subsequence highlighted
 - A 2D scatter plot showing the coordinatewise median counterexample
 - A grid with a zero forcing propagation traced step-by-step
@@ -1453,7 +1455,7 @@ Students have 45 minutes of quiet time to implement the one fix from Day 15 feed
 *Checklist to run through before presenting:*
 - [ ] First sentence memorised
 - [ ] Last sentence memorised
-- [ ] All figures labelled
+- [ ] All figures labeled
 - [ ] Slides legible from the back of the room (or poster readable from 2 metres)
 - [ ] Backup slides ready for expected Q&A questions
 - [ ] Timing confirmed (practice the talk in your head once)
@@ -1462,7 +1464,7 @@ Students have 45 minutes of quiet time to implement the one fix from Day 15 feed
 
 **0:45–2:15 — Final Presentations**
 
-Each student delivers their polished 12–15 minute talk to a full audience. If the follow-up event allows it, invite one or two external guests (a professor from a neighbouring group, a PhD student, or a teacher from the students' school) to form a small audience. This gives the talks stakes and provides feedback from a fresh perspective.
+Each student delivers their polished 12–15 minute talk to a full audience. If the follow-up event allows it, invite one or two external guests (a professor from a neighboring group, a PhD student, or a teacher from the students' school) to form a small audience. This gives the talks stakes and provides feedback from a fresh perspective.
 
 **Format:**
 
@@ -1483,7 +1485,7 @@ Coordinator does not give feedback during this session — this is the real pres
 **Individual reflection (10 min, written):**
 
 Each student answers on paper:
-1. What was the hardest part of this programme — content, thinking, or communicating?
+1. What was the hardest part of this program — content, thinking, or communicating?
 2. What is one thing you understand now that you couldn't have explained three weeks ago?
 3. If you spent another week on this material, what would you investigate?
 4. What would you tell a friend about what research mathematics is actually like?
@@ -1508,7 +1510,7 @@ Open discussion:
 | YouTube: 3Blue1Brown | Visual mathematics — study the presentation style |
 | YouTube: ICM 2022 talks | What professional mathematical talks look like |
 | UK Mathematics Trust (ukmt.org.uk) | Senior Mathematical Challenge and Olympiad preparation |
-| Undergraduate research programmes (e.g., Nuffield, Sutton Trust) | Next step for research experience |
+| Undergraduate research programs (e.g., Nuffield, Sutton Trust) | Next step for research experience |
 
 ---
 
@@ -1539,11 +1541,11 @@ Coordinator's closing message: *"You have spent four weeks working on problems t
 - [ ] `handouts/presentation_guide.md`
 
 **Supplies (for the full four weeks):**
-- [ ] Whiteboard markers in at least 3 colours (blue and white are thematic for zero forcing)
+- [ ] Whiteboard markers in at least 3 colors (blue and white are thematic for zero forcing)
 - [ ] Graph paper, 5+ sheets per student per session
 - [ ] Sticky notes (for open questions board)
 - [ ] Index cards (for Day 12 closing exercise)
-- [ ] Coloured dot stickers (for physically playing zero forcing on large drawn graphs)
+- [ ] Colored dot stickers (for physically playing zero forcing on large drawn graphs)
 - [ ] Large paper or poster boards for the grid game on Day 7
 - [ ] A4 paper for sketching slide layouts and poster thumbnails (Week 4)
 - [ ] Access to a projector or TV for slide rehearsals on Days 15–16
@@ -1559,11 +1561,11 @@ Coordinator's closing message: *"You have spent four weeks working on problems t
 | Degree d(v) | Number of edges at v |
 | Handshaking Lemma | Σ d(v) = 2\|E\| |
 | Tree | Connected acyclic graph |
-| Bipartite | 2-colourable with no monochromatic edges |
-| χ(G) | Chromatic number: min colours for proper colouring |
+| Bipartite | 2-colorable with no monochromatic edges |
+| χ(G) | Chromatic number: min colors for proper coloring |
 | Euler's formula | V - E + F = 2 (connected planar graph) |
-| Colour change rule | Blue vertex with exactly 1 white neighbour forces it blue |
-| Zero forcing set S | S such that propagation colours all vertices blue |
+| Color change rule | Blue vertex with exactly 1 white neighbor forces it blue |
+| Zero forcing set S | S such that propagation colors all vertices blue |
 | Z(G) | Minimum size of a zero forcing set |
 | Z(Pₙ) | 1 |
 | Z(Cₙ) | 2 |

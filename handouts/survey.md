@@ -2,7 +2,7 @@
 
 
 ---
-[← Programme Home](../index.md) | [Next: Networks Intro →](networks_intro.md)
+[← Program Home](../index.md) | [Next: Networks Intro →](networks_intro.md)
 
 ---
 
@@ -66,7 +66,7 @@ Algebra | Calculus | Statistics | Probability | Trigonometry | Vectors | Matrice
 
 ## Part 3 — Interests and Goals
 
-**8. Which of the following best describes the kind of mathematics you enjoy most?** (Rank 1–4, with 1 being your favourite)
+**8. Which of the following best describes the kind of mathematics you enjoy most?** (Rank 1–4, with 1 being your favorite)
 
 ___ Puzzles and games (finding clever tricks)  
 ___ Applications (solving real-world problems)  
@@ -136,4 +136,4 @@ ___ Computation (writing algorithms, exploring with code)
 
 ---
 
-[← Programme Home](../index.md) | [Next: Networks Intro →](networks_intro.md)
+[← Program Home](../index.md) | [Next: Networks Intro →](networks_intro.md)

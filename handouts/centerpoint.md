@@ -2,7 +2,7 @@
 
 
 ---
-[← Sequences & PMI](sequences_pmi.md) | [Programme Home](../index.md) | [Next: Presentation Guide →](presentation_guide.md) | [📍 Centerpoint Demo](../interactive/centerpoint.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/centerpoint.ipynb)
+[← Sequences & PMI](sequences_pmi.md) | [Program Home](../index.md) | [Next: Presentation Guide →](presentation_guide.md) | [📍 Centerpoint Demo](../interactive/centerpoint.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/centerpoint.ipynb)
 
 ---
 
@@ -14,7 +14,7 @@
 
 Imagine a swarm of 1000 robots deployed on the surface of Mars. Each robot is a mobile sensor stationed at a different location (think of their coordinates as 2D points on a map of the Martian terrain). Every few hours, each robot takes readings from thousands of different sensors: temperature, soil composition, pressure, radiation levels, and so on.
 
-Your research lab on Earth would love to analyse all of this raw data. But there's a problem: **transmitting data from Mars to Earth is extremely expensive**. The signal is weak, the distance is vast (up to 20 minutes at the speed of light), and bandwidth is extremely limited.
+Your research lab on Earth would love to analyze all of this raw data. But there's a problem: **transmitting data from Mars to Earth is extremely expensive**. The signal is weak, the distance is vast (up to 20 minutes at the speed of light), and bandwidth is extremely limited.
 
 You cannot afford to send all 1000 robots' full sensor readings every hour.
 
@@ -32,7 +32,7 @@ The most natural idea: compute the average of all the robots' coordinates.
 
 $$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \qquad \bar{y} = \frac{1}{n}\sum_{i=1}^n y_i$$
 
-**Why it's appealing:** Easy to compute, well-understood, minimises squared distances to the data.
+**Why it's appealing:** Easy to compute, well-understood, minimizes squared distances to the data.
 
 **Why it fails:** One faulty sensor can ruin everything.
 
@@ -251,7 +251,7 @@ Returning to our Mars scenario:
 
 So the robots should compute and transmit the **centerpoint** of their positions.
 
-**Bonus:** The centerpoint also minimises the "Tukey depth" — the worst-case fraction of data on the wrong side. This has applications in statistics (robust regression), machine learning (outlier-tolerant clustering), and data visualisation.
+**Bonus:** The centerpoint also minimizes the "Tukey depth" — the worst-case fraction of data on the wrong side. This has applications in statistics (robust regression), machine learning (outlier-tolerant clustering), and data visualisation.
 
 ---
 
@@ -355,9 +355,9 @@ The centerpoint is the point of maximum Tukey depth.
 
 **Open Problem 2 (Higher-Dimensional Centerpoint):** For points in ℝᵈ, the guaranteed fraction is 1/(d+1). This comes from Helly's theorem which is tight. But can you find a point that is "central" in a stronger sense in high dimensions? This connects to the unsolved **Grünbaum's conjecture** on centrally symmetric bodies.
 
-**Open Problem 3 (Colourful Centerpoint):** Suppose you have n points, each coloured one of k colours, with n/k points of each colour. Must there be a "rainbow" centerpoint — a point that every halfplane through it contains points of all k colours? This is related to the **Colourful Helly theorem** and remains an active research area.
+**Open Problem 3 (Colorful Centerpoint):** Suppose you have n points, each colored one of k colors, with n/k points of each color. Must there be a "rainbow" centerpoint — a point that every halfplane through it contains points of all k colors? This is related to the **Colorful Helly theorem** and remains an active research area.
 
 
 ---
 
-[← Sequences & PMI](sequences_pmi.md) | [Programme Home](../index.md) | [Next: Presentation Guide →](presentation_guide.md)
+[← Sequences & PMI](sequences_pmi.md) | [Program Home](../index.md) | [Next: Presentation Guide →](presentation_guide.md)

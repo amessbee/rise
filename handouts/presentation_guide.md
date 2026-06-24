@@ -2,7 +2,7 @@
 
 
 ---
-[← Centerpoint](centerpoint.md) | [Programme Home](../index.md)
+[← Centerpoint](centerpoint.md) | [Program Home](../index.md)
 
 ---
 
@@ -41,7 +41,7 @@ Pick one thing. Not five things, not a list. One thing.
 Write it as a single sentence: *"After my talk, the audience will know that [X]."*
 
 Examples:
-- "After my talk, the audience will know that you can control a social network from a surprisingly small set of nodes, and that a simple colouring game tells you how small."
+- "After my talk, the audience will know that you can control a social network from a surprisingly small set of nodes, and that a simple coloring game tells you how small."
 - "After my talk, the audience will know that the obvious way to find the centre of a 2D point cloud (take the median of each coordinate separately) can fail badly, and there is a better concept called the centerpoint."
 
 Everything in your talk serves this sentence. If a slide doesn't serve it, cut the slide.
@@ -80,7 +80,7 @@ The audience must want to know the answer before you give them the tools to find
 > "I pick any 17 numbers. No matter what I pick, I promise you can always find either four of them in increasing order or four of them in decreasing order. Is that obvious? It shouldn't be. And it's exactly the right bound — 16 numbers can be chosen so you can't do it."
 
 *For centerpoint:*
-> "A thousand robots on Mars need to send a single GPS coordinate back to Earth — one point that summarises where they all are. The obvious answer turns out to be badly wrong. Here's why."
+> "A thousand robots on Mars need to send a single GPS coordinate back to Earth — one point that summarizes where they all are. The obvious answer turns out to be badly wrong. Here's why."
 
 **What makes a good hook:**
 - It is concrete (a specific number, a specific scenario)
@@ -104,7 +104,7 @@ Introduce only the definitions, notation, and background results that the audien
 **Rule 1:** Every definition must be followed immediately by an example. No exceptions.
 
 Bad: "A zero forcing set S is a subset of V(G) such that..."
-Good: "Imagine colouring some vertices blue. A blue vertex with exactly one white neighbour forces that neighbour blue. [Draw on board.] A set S is a zero forcing set if, starting with S blue, eventually everything turns blue."
+Good: "Imagine coloring some vertices blue. A blue vertex with exactly one white neighbor forces that neighbor blue. [Draw on board.] A set S is a zero forcing set if, starting with S blue, eventually everything turns blue."
 
 **Rule 2:** Use the same notation throughout. If you call edges "edges" in Act 2, do not call them "connections" in Act 3.
 
@@ -199,7 +199,7 @@ If you have two ideas, use two slides. This feels wasteful on paper. In a talk, 
 
 | Bad title (topic) | Good title (conclusion) |
 |-------------------|------------------------|
-| Zero Forcing Definition | A blue vertex forces its lone white neighbour |
+| Zero Forcing Definition | A blue vertex forces its lone white neighbor |
 | Main Result | Z(G) equals the minimum zero forcing set size |
 | Example | On a path, one endpoint controls the whole graph |
 | Conclusion | To control any network, find its zero forcing set |
@@ -214,7 +214,7 @@ Reading the slide titles of a good talk, in order, should tell you the complete 
 **Figures:**
 - Every abstract definition should have a figure.
 - Every figure should have a label or caption.
-- Use colour sparingly and consistently (in this programme: blue = blue vertex, white circle = white vertex, always).
+- Use color sparingly and consistently (in this program: blue = blue vertex, white circle = white vertex, always).
 - Black and white must work as a fallback.
 
 **Recommended slide count:** Roughly 1 slide per minute. For a 12-minute talk: 10–14 slides.
@@ -241,12 +241,12 @@ The contrast below illustrates the cardinal rule in practice. The BAD slide trie
 ║  ZERO FORCING SETS: DEFINITION AND EXAMPLES ║
 ╠══════════════════════════════════════════════╣
 ║  • A zero forcing set S is a subset of V(G) ║
-║    such that when S is coloured blue and the ║
-║    colour change rule is applied repeatedly, ║
+║    such that when S is colored blue and the ║
+║    color change rule is applied repeatedly, ║
 ║    eventually all vertices of G become blue. ║
-║  • The colour change rule states that a blue ║
-║    vertex with exactly one white neighbour   ║
-║    forces that neighbour to become blue.     ║
+║  • The color change rule states that a blue ║
+║    vertex with exactly one white neighbor   ║
+║    forces that neighbor to become blue.     ║
 ║  • We define Z(G) = min|S| over all zero     ║
 ║    forcing sets S of G.                      ║
 ║  • Examples: Z(Pₙ)=1, Z(Cₙ)=2, Z(Kₙ)=n-1  ║
@@ -290,7 +290,7 @@ A poster is a different medium from a talk. The audience walks up, glances at yo
 ```
 ┌──────────────────────────────────────────────────────────────────┐
 │              TITLE (large font, readable from 3m)                │
-│         Your Name • Lab Name • Date                              │
+│         Your Name • Theory Group • Date                              │
 ├────────────────────┬──────────────────┬───────────────────────────┤
 │   INTRODUCTION     │   MAIN RESULT    │   IMPLICATIONS            │
 │                    │                  │                           │
@@ -400,8 +400,8 @@ Never rush straight from hearing the question to giving an answer. The rephrase 
 | Mistake | Why it happens | Fix |
 |---------|----------------|-----|
 | Too many definitions at the start | Trying to be thorough | Cut to what is strictly needed for the main result |
-| Reading off slides verbatim | Nervousness | Practise without the slides; know the content, not the words |
-| Rushing at the end | Running over time | Practise timing; cut slides earlier rather than speeding up |
+| Reading off slides verbatim | Nervousness | Practice without the slides; know the content, not the words |
+| Rushing at the end | Running over time | Practice timing; cut slides earlier rather than speeding up |
 | No figures | "The maths is in the symbols" | Every abstract object must be drawn at least once |
 | Saying "as I mentioned earlier" | Loss of structure | Each slide should stand alone; don't rely on recall |
 | Apology ("I'm not sure this is right...") | Imposter syndrome | If you're not sure, either find out or flag it honestly: "I believe this is true but haven't verified it" |
@@ -422,7 +422,7 @@ Never rush straight from hearing the question to giving an answer. The rephrase 
 **Slides / Poster:**
 - [ ] Body text ≥ 24pt; titles ≥ 36pt
 - [ ] Slide titles are conclusions, not topic labels
-- [ ] All figures are labelled
+- [ ] All figures are labeled
 - [ ] The talk works in black and white
 - [ ] Slide count matches time (roughly 1 per minute)
 
@@ -430,7 +430,7 @@ Never rush straight from hearing the question to giving an answer. The rephrase 
 - [ ] I have timed myself at least once
 - [ ] I know my first sentence by heart
 - [ ] I know my last sentence by heart
-- [ ] I have practised the talk at least once out loud
+- [ ] I have practiced the talk at least once out loud
 
 ---
 
@@ -448,4 +448,4 @@ This is not a weakness. It is what makes mathematics trustworthy. Your audience 
 
 ---
 
-[← Centerpoint](centerpoint.md) | [Programme Home](../index.md)
+[← Centerpoint](centerpoint.md) | [Program Home](../index.md)

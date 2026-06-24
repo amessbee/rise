@@ -130,16 +130,16 @@
 </head>
 <body>
 <header>
-  <a href="../index.html">← Back to Programme</a>
+  <a href="../index.html">← Back to Program</a>
   <h1>Zero Forcing Game</h1>
   <span style="width:120px"></span>
 </header>
 
 <div class="container">
   <div class="explanation">
-    <strong>Colour-change rule:</strong> If a blue vertex has <em>exactly one</em> white neighbour, it <em>forces</em> that neighbour to turn blue.
+    <strong>Color-change rule:</strong> If a blue vertex has <em>exactly one</em> white neighbor, it <em>forces</em> that neighbor to turn blue.
     All such forcings happen simultaneously in each step.
-    A set of initially-blue vertices is a <strong>zero forcing set</strong> if repeated application of the rule eventually colours every vertex blue.
+    A set of initially-blue vertices is a <strong>zero forcing set</strong> if repeated application of the rule eventually colors every vertex blue.
     The <strong>zero forcing number Z(G)</strong> is the smallest such set.
   </div>
 
@@ -172,7 +172,7 @@
       </div>
       <div class="seq-box">
         <h3>Propagation Sequence</h3>
-        <div id="seqList"><em style="color:#aaa">Click vertices to colour them blue, then use Step or Animate.</em></div>
+        <div id="seqList"><em style="color:#aaa">Click vertices to color them blue, then use Step or Animate.</em></div>
       </div>
     </div>
   </div>
@@ -363,8 +363,8 @@ function doStep() {
 
   for(let v=0;v<n;v++){
     if(!blue[v]) continue;
-    const whiteNeighbours = adj[v].filter(u=>!blue[u]);
-    if(whiteNeighbours.length===1) newBlue.push(whiteNeighbours[0]);
+    const whiteNeighbors = adj[v].filter(u=>!blue[u]);
+    if(whiteNeighbors.length===1) newBlue.push(whiteNeighbors[0]);
   }
 
   if(newBlue.length===0) return false;
@@ -452,7 +452,7 @@ function updateStatus() {
 // ─── Sequence panel ──────────────────────────────────────────────────────────
 function updateSeqPanel() {
   if(seqOrder.length===0){
-    seqList.innerHTML = '<em style="color:#aaa">Click vertices to colour them blue, then use Step or Animate.</em>';
+    seqList.innerHTML = '<em style="color:#aaa">Click vertices to color them blue, then use Step or Animate.</em>';
     return;
   }
   let html = '';
