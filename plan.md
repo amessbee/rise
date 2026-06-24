@@ -1,7 +1,7 @@
-# Research Lab Internship — Three-Week Program
+# Research Lab Internship — Four-Week Program
 ## Coordinator's Detailed Guide
 
-**Duration:** 3 weeks × 4 days × 4 hours = 48 hours of contact time  
+**Duration:** 4 weeks × 4 days × 4 hours = 64 hours of contact time  
 **Schedule:** Monday–Thursday, 9:00–13:00 (with a 15-min break around 10:45)  
 **Audience:** 3–4 A-level students (ages 16–18)  
 **Fridays:** Free / independent reading / optional office hours
@@ -17,8 +17,9 @@ The program has three tracks that build progressively:
 | **1** | Graphs and Networks | Graph theory fundamentals, special families, properties, puzzles |
 | **2** | Controlling Networks | Controllability motivation, zero forcing sets, the game, propagation sequences |
 | **3** | Sequences and Geometry | Erdős–Szekeres, PMI sequences, centerpoint theorem |
+| **4** | Communicating Research | Scientific storytelling, slide and poster design, talk delivery, full rehearsal |
 
-**Each week ends on Thursday with a problem session and mini-presentations** — students present one result or worked example from the week. These are informal (whiteboard only, 5–8 minutes each) and not assessed.
+**Weeks 1–3** each end on Thursday with informal mini-presentations (whiteboard only, 5–8 min). **Week 4** builds toward a polished external presentation — the deliverable that follows the programme.
 
 ---
 
@@ -1060,6 +1061,408 @@ Encourage students to circle "key steps" in their proofs — the one line that c
 
 ---
 
+## Week 4 — Communicating Research
+
+### Week 4 Goals
+- Understand the conventions and purpose of a scientific talk, poster, and short written summary.
+- Learn to identify the core narrative of their research experience and shape it for a non-expert audience.
+- Design clear, minimal slides or a poster with effective mathematical figures.
+- Practise delivery: pacing, signposting, handling questions, managing nerves.
+- Produce a complete, rehearsed presentation ready for an external audience.
+
+---
+
+### The Week 4 Deliverable
+
+By the end of Thursday (Day 16), each student will have a **12–15 minute presentation** — either a slide talk or a poster — ready to deliver to an audience that includes people outside the lab (other students, parents, teachers, university staff). The exact format of the follow-up event should be confirmed with the professor before Week 4 begins and communicated to students on Day 13 morning.
+
+---
+
+### Day 13 (Week 4, Monday) — What Is a Research Presentation?
+
+**Theme:** Audiences, formats, and the art of mathematical storytelling.
+
+---
+
+**0:00–0:30 — Warm-up: Watch and Critique**
+
+Show a short mathematical video — ideally a 5–7 minute excerpt from a well-made talk (e.g., a 3Blue1Brown video on a topic students already know, or a recorded conference lightning talk). Then ask:
+
+- What did the speaker do well?
+- At what point did you get lost? Why?
+- What was the single central idea of the talk?
+
+*Key observation:* Even experts lose audiences by assuming too much background, moving too fast, or presenting too many results. A great talk does one thing well.
+
+---
+
+**0:30–1:45 — Main Session: Formats and Structure**
+
+Distribute **Handout: presentation_guide.md**.
+
+**Part 1 — Formats (25 min):**
+
+| Format | Length | Setting | Strengths |
+|--------|--------|---------|-----------|
+| Seminar talk (slides) | 45–60 min | University room | Deep, linear narrative |
+| Conference talk | 20–25 min | Conference hall | Broad audience, sell the result |
+| Lightning talk | 5 min | Any | One idea, maximum impact |
+| Poster | Displayed + 3–5 min pitches | Exhibition space | Conversational, own pace |
+| Blog post / write-up | Reading time 5–10 min | Online | Permanent, searchable |
+
+For this programme, students will prepare either a **12–15 minute slide talk** or a **poster with a 5-minute pitch**, depending on the follow-up event format. Both require the same underlying work: knowing your story.
+
+**Part 2 — Anatomy of a Mathematical Talk (45 min):**
+
+Every good mathematics talk, regardless of length, has the same four acts:
+
+**Act 1 — The Hook (10–15% of talk time)**
+- Open with a concrete question, puzzle, or surprising fact — not a definition.
+- The audience must care about the problem *before* they are given the tools to solve it.
+- Bad opening: "Let G = (V,E) be a graph. We define the zero forcing number Z(G) as..."
+- Good opening: "How many accounts would you need to control on Twitter to eventually make your opinion dominate the entire network?"
+
+**Act 2 — The Setup (20–25%)**
+- Introduce only the definitions and prior work the audience needs for *this* talk.
+- Every definition must be accompanied by an example. No naked definitions.
+- If you need to define "graph", do it with a picture, not with symbols.
+
+**Act 3 — The Result (40–50%)**
+- Your main theorem, discovery, or exploration.
+- State it clearly, then give intuition *before* the proof.
+- If there is a proof, every step should feel inevitable.
+- If there is no proof (an exploration or conjecture), present evidence: examples, patterns, failed attempts.
+
+**Act 4 — The So What (15–20%)**
+- Why does this matter? What does it connect to?
+- What is still open? What would you do next?
+- End with a single clear sentence the audience will remember.
+
+*Exercise (10 min):* Students individually sketch a four-act outline for their own topic, using just bullet points. No sentences yet.
+
+---
+
+**1:45–2:00 — Break**
+
+---
+
+**2:00–3:00 — The Elevator Pitch**
+
+The hardest communication skill is compression. An elevator pitch is a 60–90 second explanation of your work that a curious non-expert can follow.
+
+**Structure of a good elevator pitch:**
+1. One sentence: the problem. ("We study how few controllers you need to steer a network.")
+2. One sentence: why it's hard. ("The answer depends on the graph structure in a subtle way.")
+3. One sentence: the key idea. ("We discovered that the minimum number equals the size of a special colouring game.")
+4. One sentence: one cool consequence. ("This means you can tell if a Twitter network is controllable just by playing a colouring puzzle on it.")
+
+**Workshop:**
+
+Each student writes their own elevator pitch for their chosen topic (they pick from the week 1–3 material). Then they deliver it to the group. Everyone gives one piece of feedback:
+- Was the problem clear?
+- Was there too much jargon?
+- Did you understand why it mattered?
+
+Repeat with refinements. Target: a pitch each student could give to a family member at dinner.
+
+---
+
+**3:00–4:00 — Choosing a Topic and Angle**
+
+Each student finalises which topic from Weeks 1–3 they will present, and which *angle* they will take.
+
+**Possible topics and angles:**
+
+| Topic | Possible Angle |
+|-------|---------------|
+| Zero forcing | The game / physical intuition first; theorem as punchline |
+| Erdős–Szekeres | Puzzle-first ("can you find 17 numbers with no long monotone run?"); theorem as resolution |
+| Centerpoint | Mars robots story; show coordinatewise median failure dramatically |
+| Graph controllability | Social media influence; zero forcing as the mathematical model |
+| PMI sequences | Propagation sequences on grids; connection to 1D case as the through-line |
+
+*Discussion:* Which angle is most accessible? Which is most technically satisfying? These may be different — the choice depends on the audience.
+
+**By end of Day 13:** Every student has:
+- A chosen topic
+- A chosen angle
+- A four-act outline (bullet points)
+- An elevator pitch they can deliver from memory
+
+**Homework:** Read Sections 1–3 of the presentation_guide.md handout. Expand the four-act outline into one full sentence per slide/section. Bring it to Day 14.
+
+---
+
+### Day 14 (Week 4, Tuesday) — Structuring the Narrative
+
+**Theme:** From outline to script. Choosing what to cut.
+
+---
+
+**0:00–0:30 — Warm-up: The One-Slide Rule**
+
+Challenge: explain zero forcing (or your chosen topic) using exactly ONE slide — one image or diagram, no equations, a title, and at most 20 words of text.
+
+Students sketch this on paper. Share. Discuss: what did you have to cut? What survived? The thing that survived is your core message.
+
+---
+
+**0:30–1:45 — Main Session: The Narrative Arc in Practice**
+
+**Part 1 — Peer Outline Review (30 min):**
+
+Students exchange their four-act outlines (from homework). Each student reads their partner's outline and answers:
+1. Is the hook a question or puzzle, or is it a definition? (If a definition: rewrite it as a question.)
+2. Does Act 2 (Setup) contain anything that isn't needed for Act 3 (Result)?
+3. Is there a "so what" moment — a sentence that answers "why should I care?"
+4. What is the single most confusing part?
+
+Written feedback exchanged; 10 minutes to discuss.
+
+**Part 2 — What to Cut (30 min):**
+
+The most common mistake in student presentations: trying to include everything. A 12-minute talk has room for approximately:
+- 1 hook example
+- 3–4 definitions
+- 1 main theorem
+- 1 worked example
+- 1 open problem
+- 1 closing sentence
+
+Everything else goes in the "appendix" — slides prepared but not shown unless asked about in Q&A.
+
+*Exercise:* Each student lists every concept they *want* to include. Then rank them: (A) essential, (B) helpful, (C) nice to have. Cut all C's from the main talk. Move B's to backup slides.
+
+**Part 3 — Signposting (25 min):**
+
+**Signposting** is the art of telling the audience where they are and where they are going. Examples:
+
+- "I'll start with the question that motivated this, then give you the key definition, and finish with the main result."
+- "This is the tricky step — take a moment to check you're comfortable with it before we move on."
+- "We've just seen the definition. Now here's why it turns out to be the right one."
+- "I'll skip the proof details here, but the intuition is..."
+
+Good signposting means the audience is never lost. They may not follow every detail, but they always know where they are in the talk.
+
+Students annotate their outlines: add a signpost sentence at the start of each act.
+
+---
+
+**1:45–2:00 — Break**
+
+---
+
+**2:00–3:00 — Figures and Mathematical Diagrams**
+
+The most powerful tool in a mathematics presentation is a well-drawn figure. A good diagram:
+- Makes an abstract definition concrete
+- Replaces a paragraph of text
+- Gives the audience something to look at while the speaker talks
+
+**Workshop — Drawing for an Audience:**
+
+Each student picks the single most important concept from their talk and draws the figure they would show to explain it. Requirements:
+- Must work on a whiteboard or as a simple slide diagram
+- Must be labelled (no unlabelled graphs)
+- Must have a one-sentence caption
+- Must work in black and white (if the venue projector is grey-scale)
+
+Students present their figure to the group and explain it in 2 minutes. Feedback: is the figure self-contained? Does the label help or clutter?
+
+**Common figures for this programme:**
+- A small graph with coloured (blue/white) vertices for zero forcing
+- A sequence written out with the increasing subsequence highlighted
+- A 2D scatter plot showing the coordinatewise median counterexample
+- A grid with a zero forcing propagation traced step-by-step
+
+---
+
+**3:00–4:00 — First Draft of Slides or Poster Layout**
+
+Students begin building their slides or poster layout (on paper first, or directly in their chosen software).
+
+**For slide talks — design principles (10 min briefing):**
+- One idea per slide. If you have two ideas, use two slides.
+- Title of each slide = the takeaway sentence, not a topic label. ("Zero forcing spreads like a chain reaction" not "Zero Forcing Definition.")
+- No slide should be read aloud verbatim — the slide shows the picture; you provide the commentary.
+- Font size ≥ 24pt for body text; ≥ 36pt for titles.
+- Aim for 1 slide per minute as a rough guide (12-15 slides for a 12-15 min talk).
+
+**For posters — layout principles (10 min briefing):**
+- Three columns: Problem / Method / Results.
+- Every section needs a figure. A poster with no figures will not draw people in.
+- The title should be readable from 3 metres away.
+- Aim for 40% white space — crowded posters are unread posters.
+
+Students sketch their full slide deck or poster layout by end of session (rough thumbnails are fine — no need for polished slides yet).
+
+**Homework:** Complete a first draft of all slides or the poster. Bring it in digital or printed form to Day 15. Read Section 4 of presentation_guide.md (delivery).
+
+---
+
+### Day 15 (Week 4, Wednesday) — Delivery and Rehearsal
+
+**Theme:** From script to performance.
+
+---
+
+**0:00–0:30 — Warm-up: Two-Minute Talks**
+
+Each student delivers a completely unscripted two-minute talk on the topic of their choice — but it must be a topic from Week 1, 2, or 3 that is *not* their presentation topic. No preparation allowed.
+
+Purpose: speaking about mathematics without notes forces you to use plain language and identify what you actually understand vs. what you are memorising. The stumbles here are instructive, not embarrassing.
+
+---
+
+**0:30–1:45 — Main Session: Delivery Skills**
+
+**Part 1 — Pacing and Timing (20 min):**
+
+Record (or have a volunteer time) a student giving a 3-minute version of their talk. Play it back (or just discuss timing). Common issues:
+- **Too fast:** nerves compress the talk; audience can't process definitions at speed.
+- **Too slow on setup, too rushed at the result:** the interesting part gets the least time.
+- **No pauses:** pauses are not dead air — they are thinking time for the audience.
+
+Exercise: read one definition from their talk aloud, then pause for 5 full seconds. It feels much longer than it is. This is fine.
+
+**Part 2 — Eye Contact and the Room (15 min):**
+
+When speaking, the instinct is to look at your slides (or your notes). Instead:
+- Look at the audience for 80% of the time.
+- Look at the slide only briefly to orient yourself, then return to the audience.
+- When writing on a whiteboard, pause, write, then turn back and speak.
+
+Practice: each student picks one paragraph from their talk and delivers it while maintaining eye contact with the group (no notes, no looking at the board).
+
+**Part 3 — Handling Questions (30 min):**
+
+The Q&A is often what audiences remember most. Rules:
+1. Repeat the question before answering (others may not have heard it; it buys you thinking time).
+2. "That's a great question" is fine once. Not every time.
+3. "I don't know" is a perfectly good answer — but follow it with "my guess would be..." or "that's something worth investigating."
+4. "That's slightly outside what I covered, but briefly..." lets you engage without derailing.
+5. If the question is aggressive or confusing: "Can you say a bit more about what you're asking?" is always legitimate.
+
+**Mock Q&A drill:** Coordinator (and students) fire rapid questions at each student about their topic. Students practice the above techniques. Questions range from genuine curiosity ("Why is the bound 1/3 and not 1/4?") to deliberately awkward ("How is this useful in the real world?").
+
+**Part 4 — Managing Nerves (15 min):**
+
+Honest discussion: everyone gets nervous presenting. Strategies:
+- **Preparation reduces nerves more than anything else.** Know your first sentence and last sentence by heart. The middle will follow.
+- Start with the thing you know best — the hook or the main example.
+- If you lose your place: pause, look at your slide title, say "So, the key point here is..." and you're back.
+- The audience wants you to succeed. They are not looking for errors.
+
+Share the "known but nervous" feeling: professional mathematicians get nervous before talks. This is normal.
+
+---
+
+**1:45–2:00 — Break**
+
+---
+
+**2:00–4:00 — Full Rehearsal (First Run)**
+
+Each student gives their complete 12–15 minute presentation in full, with slides or poster, to the group. Coordinator times the talk.
+
+**After each talk, structured feedback (5 minutes):**
+
+The group uses this rubric:
+
+| Criterion | Question to answer |
+|-----------|-------------------|
+| Hook | Was the opening question/puzzle clear and compelling? |
+| Setup | Were definitions accompanied by examples? |
+| Core result | Was the main point stated clearly and early enough? |
+| Figures | Did the visuals help or clutter? |
+| Signposting | Did you always know where you were in the talk? |
+| Pacing | Too fast, too slow, or right? |
+| One-thing-to-fix | Name exactly one specific improvement for tomorrow. |
+
+Each presenter hears: two things that worked, one specific thing to fix. Not more. The "one thing to fix" is the only homework.
+
+---
+
+### Day 16 (Week 4, Thursday) — Final Presentations
+
+**Theme:** Ready for the outside world.
+
+---
+
+**0:00–0:45 — Morning Polish**
+
+Students have 45 minutes of quiet time to implement the one fix from Day 15 feedback and make any final adjustments. Coordinator is available for questions but does not give new feedback — changes at this stage should be targeted and small.
+
+*Checklist to run through before presenting:*
+- [ ] First sentence memorised
+- [ ] Last sentence memorised
+- [ ] All figures labelled
+- [ ] Slides legible from the back of the room (or poster readable from 2 metres)
+- [ ] Backup slides ready for expected Q&A questions
+- [ ] Timing confirmed (practice the talk in your head once)
+
+---
+
+**0:45–2:15 — Final Presentations**
+
+Each student delivers their polished 12–15 minute talk to a full audience. If the follow-up event allows it, invite one or two external guests (a professor from a neighbouring group, a PhD student, or a teacher from the students' school) to form a small audience. This gives the talks stakes and provides feedback from a fresh perspective.
+
+**Format:**
+
+- Talk (12–15 min)
+- Q&A (5 min): the group and any guests ask questions. Coordinator ensures every presenter gets at least two substantive questions.
+- 30-second applause, then next speaker.
+
+Coordinator does not give feedback during this session — this is the real presentation, not a rehearsal.
+
+---
+
+**2:15–2:30 — Break**
+
+---
+
+**2:30–3:30 — Reflection and Looking Forward**
+
+**Individual reflection (10 min, written):**
+
+Each student answers on paper:
+1. What was the hardest part of this programme — content, thinking, or communicating?
+2. What is one thing you understand now that you couldn't have explained three weeks ago?
+3. If you spent another week on this material, what would you investigate?
+4. What would you tell a friend about what research mathematics is actually like?
+
+These are kept by the students — they are not collected or assessed. But they make excellent material for personal statements, scholarship applications, or university interviews.
+
+**Group debrief (20 min):**
+
+Open discussion:
+- What is the relationship between understanding something and being able to explain it?
+- What was the most surprising thing you learned — about mathematics or about yourself?
+- What does "research" mean, now that you have done a version of it?
+
+**Resources for continuing (10 min):**
+
+| Resource | Purpose |
+|----------|---------|
+| Diestel, *Graph Theory* (free online) | Rigorous graph theory text |
+| Alon & Spencer, *The Probabilistic Method* | Advanced combinatorics |
+| *The Art of Problem Solving* (artofproblemsolving.com) | Competitions and enrichment puzzles |
+| *Mathematical Writing* by Knuth, Larrabee, and Roberts | Short guide to writing and presenting maths |
+| YouTube: 3Blue1Brown | Visual mathematics — study the presentation style |
+| YouTube: ICM 2022 talks | What professional mathematical talks look like |
+| UK Mathematics Trust (ukmt.org.uk) | Senior Mathematical Challenge and Olympiad preparation |
+| Undergraduate research programmes (e.g., Nuffield, Sutton Trust) | Next step for research experience |
+
+---
+
+**3:30–4:00 — Closing**
+
+Certificate of completion (if prepared). Photos. Informal conversation.
+
+Coordinator's closing message: *"You have spent four weeks working on problems that professional mathematicians find difficult. You asked questions, got stuck, found examples, wrote proofs, and explained hard ideas to other people. That is what mathematics research looks like. You are already doing it."*
+
+---
+
 ## Complete Materials Checklist
 
 **Print one copy per student on Day 1:**
@@ -1075,13 +1478,19 @@ Encourage students to circle "key steps" in their proofs — the one line that c
 **Print on Day 11 (Week 3, Wednesday):**
 - [ ] `handouts/centerpoint.md`
 
-**Supplies (for the full three weeks):**
+**Print on Day 13 (Week 4, Monday):**
+- [ ] `handouts/presentation_guide.md`
+
+**Supplies (for the full four weeks):**
 - [ ] Whiteboard markers in at least 3 colours (blue and white are thematic for zero forcing)
 - [ ] Graph paper, 5+ sheets per student per session
 - [ ] Sticky notes (for open questions board)
 - [ ] Index cards (for Day 12 closing exercise)
 - [ ] Coloured dot stickers (for physically playing zero forcing on large drawn graphs)
 - [ ] Large paper or poster boards for the grid game on Day 7
+- [ ] A4 paper for sketching slide layouts and poster thumbnails (Week 4)
+- [ ] Access to a projector or TV for slide rehearsals on Days 15–16
+- [ ] Optional: printed A3 poster template for students choosing the poster format
 
 ---
 
