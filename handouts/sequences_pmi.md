@@ -1,5 +1,11 @@
 # Handout 3 — Sequences, Subsequences, and PMI
 
+
+---
+[← Zero Forcing](zero_forcing.md) | [Programme Home](../index.md) | [Next: Centerpoint →](centerpoint.md) | [🔢 Sequences Demo](../interactive/sequences.html) | [📊 PMI Grid](../interactive/pmi_grid.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/sequences_erdos.ipynb)
+
+---
+
 *Research Lab Internship — Days 3–4*
 
 ---
@@ -583,3 +589,8 @@ The connection between PMI sequences and network controllability gives us a **ne
 **H9.** Prove: every sequence of n distinct numbers contains a monotone subsequence of length at least √n. *(Hint: use Erdős–Szekeres with m = n' chosen so mn = n.)*
 
 **H10 (Challenge).** A *Young tableau* of shape (λ₁, λ₂, ..., λₖ) is an array of distinct numbers where each row is increasing left-to-right and each column is increasing top-to-bottom. The RSK correspondence is a beautiful bijection between permutations of {1,...,n} and pairs of Standard Young Tableaux of the same shape. Look up the RSK correspondence. What does it say about longest increasing subsequences?
+
+
+---
+
+[← Zero Forcing](zero_forcing.md) | [Programme Home](../index.md) | [Next: Centerpoint →](centerpoint.md)

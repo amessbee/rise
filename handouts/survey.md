@@ -1,5 +1,11 @@
 # Research Lab Internship — Background Survey
 
+
+---
+[← Programme Home](../index.md) | [Next: Networks Intro →](networks_intro.md)
+
+---
+
 **Name:** ___________________________  
 **Date:** ___________________________
 
@@ -126,3 +132,8 @@ ___ Computation (writing algorithms, exploring with code)
 ---
 
 *Thank you! We'll collect these and use them to shape the week.*
+
+
+---
+
+[← Programme Home](../index.md) | [Next: Networks Intro →](networks_intro.md)

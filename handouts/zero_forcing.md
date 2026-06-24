@@ -1,5 +1,11 @@
 # Handout 2 — Zero Forcing Sets and the Controllability Game
 
+
+---
+[← Networks Intro](networks_intro.md) | [Programme Home](../index.md) | [Next: Sequences & PMI →](sequences_pmi.md) | [🎮 Zero Forcing Game](../interactive/zero_forcing_game.html) | [📊 PMI Grid](../interactive/pmi_grid.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/zero_forcing.ipynb)
+
+---
+
 *Research Lab Internship — Days 2–3*
 
 ---
@@ -470,3 +476,8 @@ where:
 The system is **controllable** if and only if the controllability matrix [B, AB, A²B, ..., Aⁿ⁻¹B] has full rank.
 
 The remarkable fact is: the minimum |S| for full controllability equals Z(G) (with appropriate matrix choice). The zero forcing game is a visual, combinatorial shadow of this algebraic condition.
+
+
+---
+
+[← Networks Intro](networks_intro.md) | [Programme Home](../index.md) | [Next: Sequences & PMI →](sequences_pmi.md)

@@ -1,5 +1,11 @@
 # Handout 1 — Introduction to Graphs and Networks
 
+
+---
+[← Programme Home](../index.md) | [Next: Zero Forcing →](zero_forcing.md) | [🎮 Interactive Game](../interactive/zero_forcing_game.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/zero_forcing.ipynb)
+
+---
+
 *Research Lab Internship — Day 1 Afternoon*
 
 ---
@@ -497,3 +503,8 @@ The **graph isomorphism problem** asks: given two graphs G and H, are they the "
 **H3.** A graph has n vertices and every vertex has degree at least n/2. Prove that the graph is connected. *(Hint: suppose two vertices u and v are not connected. Count how many vertices each can be adjacent to.)*
 
 **H4 (Challenge).** In a social network of 20 people, is it possible that everyone has a different number of friends? Explain your answer.
+
+
+---
+
+[← Programme Home](../index.md) | [Next: Zero Forcing →](zero_forcing.md)

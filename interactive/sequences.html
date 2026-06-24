@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patience Sorting &amp; LIS Animator</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #fff; color: #222; }
+  header { background: #1a56a0; color: #fff; padding: 14px 24px; display: flex; align-items: center; gap: 16px; }
+  header a { color: #cce0ff; text-decoration: none; font-size: 0.9em; }
+  header a:hover { text-decoration: underline; }
+  header h1 { font-size: 1.25em; font-weight: 600; }
+  .tabs { display: flex; border-bottom: 2px solid #1a56a0; margin-bottom: 0; }
+  .tab-btn { padding: 10px 22px; border: none; background: #eef4ff; color: #1a56a0; cursor: pointer; font-size: 0.95em; font-weight: 500; border-radius: 6px 6px 0 0; margin-right: 4px; border-bottom: 2px solid transparent; transition: background 0.15s; }
+  .tab-btn.active { background: #1a56a0; color: #fff; border-bottom: 2px solid #1a56a0; }
+  .tab-btn:hover:not(.active) { background: #d8e8f7; }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+  .container { max-width: 800px; margin: 20px auto; padding: 0 16px; }
+  .explainer { background: #eef4ff; border-left: 4px solid #1a56a0; padding: 12px 16px; margin-bottom: 16px; font-size: 0.92em; line-height: 1.55; border-radius: 0 6px 6px 0; }
+  .controls { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; align-items: center; }
+  input[type="text"], input[type="number"] { padding: 7px 10px; border: 1px solid #b0c4e0; border-radius: 5px; font-size: 0.95em; width: 320px; }
+  button { background: #1a56a0; color: #fff; border: none; padding: 7px 16px; border-radius: 5px; cursor: pointer; font-size: 0.9em; font-weight: 500; transition: background 0.15s; }
+  button:hover { background: #154a8e; }
+  button:disabled { background: #9ab2d0; cursor: default; }
+  button.secondary { background: #e5eaf2; color: #1a56a0; border: 1px solid #b0c4e0; }
+  button.secondary:hover { background: #d0dcef; }
+  /* Sequence display */
+  .seq-display { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 14px; min-height: 40px; }
+  .seq-chip { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; border-radius: 6px; font-size: 1em; font-weight: 600; border: 2px solid #ccc; background: #f5f5f5; color: #555; transition: all 0.3s; }
+  .seq-chip.lis { background: #1a56a0; color: #fff; border-color: #1a56a0; }
+  .seq-chip.current { border-color: #e67e22; background: #fef5e7; color: #e67e22; }
+  .seq-chip.placed { background: #eaf5ea; border-color: #27ae60; color: #27ae60; }
+  /* Piles */
+  .piles-area { display: flex; gap: 10px; flex-wrap: wrap; min-height: 220px; align-items: flex-end; padding: 16px 8px 8px; background: #f9fbff; border: 1.5px solid #d0d8e8; border-radius: 8px; margin-bottom: 14px; }
+  .pile { display: flex; flex-direction: column-reverse; align-items: center; gap: 3px; }
+  .pile-label { font-size: 0.75em; color: #888; margin-top: 4px; text-align: center; }
+  .card { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 30px; border-radius: 5px; border: 1.5px solid #9ab2d0; background: #fff; font-size: 0.95em; font-weight: 600; color: #1a56a0; box-shadow: 0 1px 3px rgba(0,0,0,0.1); transition: all 0.25s; }
+  .card.top { background: #1a56a0; color: #fff; border-color: #0d3a73; box-shadow: 0 2px 6px rgba(26,86,160,0.3); }
+  .card.lis-card { background: #27ae60; color: #fff; border-color: #1a6b38; }
+  .status-bar { background: #f0f5ff; border: 1px solid #c8d8f0; border-radius: 6px; padding: 9px 14px; font-size: 0.9em; color: #333; margin-bottom: 10px; min-height: 36px; }
+  .anim-controls { display: flex; gap: 8px; margin-bottom: 12px; align-items: center; }
+  .result-box { background: #eafaf1; border: 1.5px solid #27ae60; border-radius: 8px; padding: 12px 16px; margin-top: 12px; font-size: 0.92em; }
+  .result-box h3 { color: #1a6b38; margin-bottom: 6px; font-size: 1em; }
+  /* Erdős–Szekeres tab */
+  .es-section { margin-bottom: 18px; }
+  .mono-display { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0; min-height: 44px; }
+  .mono-chip { display: inline-flex; align-items: center; justify-content: center; min-width: 42px; height: 38px; padding: 0 6px; border-radius: 6px; font-size: 0.95em; font-weight: 600; border: 2px solid #ccc; background: #f5f5f5; color: #888; }
+  .mono-chip.increasing { background: #1a56a0; color: #fff; border-color: #1a56a0; }
+  .mono-chip.decreasing { background: #c0392b; color: #fff; border-color: #8b0000; }
+  .es-result { background: #eef4ff; border: 1px solid #b0c4e0; border-radius: 6px; padding: 10px 14px; font-size: 0.92em; line-height: 1.6; margin-top: 10px; }
+  .info-box { background: #fff8e1; border-left: 4px solid #f0a500; padding: 10px 14px; border-radius: 0 6px 6px 0; font-size: 0.88em; line-height: 1.5; margin-bottom: 14px; }
+</style>
+</head>
+<body>
+<header>
+  <span><a href="../index.html">← Back to main site</a></span>
+  <h1>Patience Sorting &amp; LIS</h1>
+</header>
+
+<div class="container">
+  <div class="tabs">
+    <button class="tab-btn active" onclick="switchTab('patience')">Patience Sorting &amp; LIS</button>
+    <button class="tab-btn" onclick="switchTab('erdos')">Erdős–Szekeres</button>
+  </div>
+
+  <!-- TAB 1: Patience Sorting -->
+  <div class="tab-panel active" id="tab-patience">
+    <div style="height:14px"></div>
+    <div class="explainer">
+      <strong>Patience sorting</strong> places each card on the leftmost pile whose top card is ≥ the new card.
+      If no pile qualifies, start a new pile. The top cards across piles always form a strictly increasing sequence.
+      The number of piles at the end equals the <strong>length of the longest increasing subsequence (LIS)</strong>.
+    </div>
+
+    <div class="controls">
+      <input type="text" id="seqInput" placeholder="e.g. 3 1 4 1 5 9 2 6" value="3 1 4 1 5 9 2 6">
+      <button id="btnSort" onclick="startSort()">Sort</button>
+      <button class="secondary" onclick="resetAll()">Reset</button>
+    </div>
+
+    <div style="font-size:0.88em;color:#555;margin-bottom:10px;">
+      <strong>Original sequence:</strong>
+    </div>
+    <div class="seq-display" id="seqDisplay"></div>
+
+    <div class="anim-controls" id="animControls" style="display:none">
+      <button id="btnNext" onclick="nextStep()">Next Step ▶</button>
+      <button id="btnAuto" onclick="toggleAuto()">Auto ▷</button>
+      <button class="secondary" onclick="resetAll()">Reset</button>
+      <span style="font-size:0.85em;color:#666;" id="stepCounter"></span>
+    </div>
+
+    <div class="status-bar" id="statusBar">Enter a sequence and press Sort.</div>
+
+    <div class="piles-area" id="pilesArea">
+      <span style="color:#bbb;font-size:0.9em;align-self:center;margin:auto;">Piles will appear here.</span>
+    </div>
+
+    <div class="result-box" id="resultBox" style="display:none">
+      <h3 id="resultTitle"></h3>
+      <div id="resultBody"></div>
+    </div>
+  </div>
+
+  <!-- TAB 2: Erdős–Szekeres -->
+  <div class="tab-panel" id="tab-erdos">
+    <div style="height:14px"></div>
+    <div class="explainer">
+      <strong>Erdős–Szekeres theorem:</strong> Any sequence of more than n² distinct numbers contains either an increasing subsequence of length &gt; n or a decreasing subsequence of length &gt; n. Equivalently, any sequence of n²+1 numbers has a monotone subsequence of length ≥ n+1.
+    </div>
+    <div class="info-box">
+      <strong>Try it:</strong> choose n and generate a random sequence of n²+1 numbers. The algorithm finds a monotone (increasing or decreasing) subsequence of length ≥ n+1 — guaranteed by the theorem.
+    </div>
+    <div class="es-section">
+      <div class="controls">
+        <label style="font-size:0.92em;">Enter n:</label>
+        <input type="number" id="esN" value="3" min="2" max="5" style="width:70px">
+        <button onclick="esGenerate()">Generate &amp; Find</button>
+      </div>
+      <div style="font-size:0.88em;color:#555;margin:8px 0 4px;"><strong>Sequence (n²+1 numbers):</strong></div>
+      <div class="mono-display" id="esSeqDisplay"></div>
+      <div class="es-result" id="esResult" style="display:none"></div>
+    </div>
+    <div class="explainer" style="margin-top:10px;">
+      <strong>Proof sketch via patience sorting:</strong> When you run patience sorting, the number of piles = LIS length. If there are ≤ n piles, by pigeonhole some pile has ≥ n+1 cards — and those form a decreasing subsequence! So either LIS ≥ n+1 (blue) or LDS ≥ n+1 (red).
+    </div>
+  </div>
+</div>
+
+<script>
+// ---- Tab switching ----
+function switchTab(name) {
+  document.querySelectorAll('.tab-btn').forEach((b, i) => {
+    b.classList.toggle('active', (i === 0 && name === 'patience') || (i === 1 && name === 'erdos'));
+  });
+  document.getElementById('tab-patience').classList.toggle('active', name === 'patience');
+  document.getElementById('tab-erdos').classList.toggle('active', name === 'erdos');
+}
+
+// ---- Patience Sorting State ----
+let sequence = [];
+let piles = [];       // piles[i] = array of values, index 0 = bottom, last = top
+let step = 0;         // which element we're about to place
+let done = false;
+let autoTimer = null;
+let autoRunning = false;
+let lisIndices = [];  // indices in original seq that form a LIS
+
+function parseInput() {
+  const raw = document.getElementById('seqInput').value;
+  return raw.trim().split(/[\s,]+/).filter(s => s !== '').map(Number).filter(n => !isNaN(n));
+}
+
+function startSort() {
+  resetAll(true);
+  sequence = parseInput();
+  if (sequence.length === 0) {
+    document.getElementById('statusBar').textContent = 'Please enter a valid sequence of numbers.';
+    return;
+  }
+  if (sequence.length > 40) {
+    document.getElementById('statusBar').textContent = 'Please use 40 or fewer numbers for a clear display.';
+    return;
+  }
+  piles = [];
+  step = 0;
+  done = false;
+  document.getElementById('animControls').style.display = 'flex';
+  document.getElementById('resultBox').style.display = 'none';
+  renderSeq(-1);
+  renderPiles(-1);
+  updateStepCounter();
+  document.getElementById('statusBar').textContent = 'Ready. Click "Next Step" to place each card one by one.';
+}
+
+function resetAll(keepInput) {
+  if (autoTimer) { clearInterval(autoTimer); autoTimer = null; }
+  autoRunning = false;
+  document.getElementById('btnAuto').textContent = 'Auto ▷';
+  sequence = [];
+  piles = [];
+  step = 0;
+  done = false;
+  lisIndices = [];
+  document.getElementById('seqDisplay').innerHTML = '';
+  document.getElementById('pilesArea').innerHTML = '<span style="color:#bbb;font-size:0.9em;align-self:center;margin:auto;">Piles will appear here.</span>';
+  document.getElementById('statusBar').textContent = 'Enter a sequence and press Sort.';
+  document.getElementById('animControls').style.display = 'none';
+  document.getElementById('resultBox').style.display = 'none';
+  if (!keepInput) document.getElementById('seqInput').value = '3 1 4 1 5 9 2 6';
+}
+
+// ---- Core algorithm ----
+// Returns index of pile to place on (-1 = new pile), and updates piles.
+function placeCard(val) {
+  for (let i = 0; i < piles.length; i++) {
+    const top = piles[i][piles[i].length - 1];
+    if (top >= val) {
+      piles[i].push(val);
+      return i;
+    }
+  }
+  piles.push([val]);
+  return piles.length - 1;
+}
+
+function nextStep() {
+  if (done || sequence.length === 0) return;
+  if (step >= sequence.length) { finishSort(); return; }
+
+  const val = sequence[step];
+  const pileIdx = placeCard(val);
+
+  const msg = pileIdx < piles.length - 1
+    ? `Placed ${val} on pile ${pileIdx + 1} (top was ${piles[pileIdx][piles[pileIdx].length - 2]}).`
+    : `No pile with top ≥ ${val}. Started new pile ${piles.length}.`;
+  document.getElementById('statusBar').textContent =
+    `Step ${step + 1}/${sequence.length}: ${msg}  |  Tops: [${piles.map(p => p[p.length-1]).join(', ')}]`;
+
+  renderSeq(step);
+  renderPiles(pileIdx);
+  step++;
+  updateStepCounter();
+
+  if (step >= sequence.length) {
+    finishSort();
+  }
+}
+
+function finishSort() {
+  done = true;
+  if (autoTimer) { clearInterval(autoTimer); autoTimer = null; autoRunning = false; }
+  document.getElementById('btnAuto').textContent = 'Auto ▷';
+
+  // Compute LIS via patience sorting backtracking
+  lisIndices = computeLIS(sequence);
+
+  renderSeq(-2); // -2 = highlight LIS
+  renderPilesLIS();
+  showResult();
+  document.getElementById('statusBar').textContent =
+    `Done! ${piles.length} pile${piles.length !== 1 ? 's' : ''} → LIS length = ${piles.length}.`;
+}
+
+// Patience sorting with backpointers for LIS reconstruction
+function computeLIS(arr) {
+  const n = arr.length;
+  const pileEnds = [];    // pileEnds[i] = index in arr of top card of pile i
+  const prev = new Array(n).fill(-1);
+  const pileOf = new Array(n).fill(-1);
+
+  for (let i = 0; i < n; i++) {
+    const val = arr[i];
+    // Binary search for leftmost pile with top >= val
+    let lo = 0, hi = pileEnds.length;
+    while (lo < hi) {
+      const mid = (lo + hi) >> 1;
+      if (arr[pileEnds[mid]] >= val) hi = mid;
+      else lo = mid + 1;
+    }
+    pileOf[i] = lo;
+    if (lo > 0) prev[i] = pileEnds[lo - 1];
+    if (lo === pileEnds.length) pileEnds.push(i);
+    else pileEnds[lo] = i;
+  }
+
+  // Reconstruct LIS (one of possibly many)
+  const lis = [];
+  let cur = pileEnds[pileEnds.length - 1];
+  while (cur !== -1) {
+    lis.unshift(cur);
+    cur = prev[cur];
+  }
+  return lis;
+}
+
+// ---- Rendering ----
+function renderSeq(highlightStep) {
+  const div = document.getElementById('seqDisplay');
+  div.innerHTML = '';
+  for (let i = 0; i < sequence.length; i++) {
+    const chip = document.createElement('div');
+    chip.className = 'seq-chip';
+    chip.textContent = sequence[i];
+    if (highlightStep === -2) {
+      // LIS highlight mode
+      if (lisIndices.includes(i)) chip.classList.add('lis');
+    } else if (i === highlightStep) {
+      chip.classList.add('current');
+    } else if (i < highlightStep) {
+      chip.classList.add('placed');
+    }
+    div.appendChild(chip);
+  }
+}
+
+function renderPiles(newPileIdx) {
+  const area = document.getElementById('pilesArea');
+  if (piles.length === 0) {
+    area.innerHTML = '<span style="color:#bbb;font-size:0.9em;align-self:center;margin:auto;">Piles will appear here.</span>';
+    return;
+  }
+  area.innerHTML = '';
+  for (let i = 0; i < piles.length; i++) {
+    const pileDiv = document.createElement('div');
+    pileDiv.className = 'pile';
+    for (let j = 0; j < piles[i].length; j++) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const isTop = j === piles[i].length - 1;
+      const isNew = isTop && i === newPileIdx && step >= 0;
+      if (isNew) card.classList.add('top');
+      card.textContent = piles[i][j];
+      pileDiv.appendChild(card);
+    }
+    const lbl = document.createElement('div');
+    lbl.className = 'pile-label';
+    lbl.textContent = `Pile ${i + 1}`;
+    pileDiv.appendChild(lbl);
+    area.appendChild(pileDiv);
+  }
+}
+
+function renderPilesLIS() {
+  // After done: mark LIS top cards in green
+  const area = document.getElementById('pilesArea');
+  area.innerHTML = '';
+  const lisVals = new Set(lisIndices.map(i => sequence[i]));
+
+  for (let i = 0; i < piles.length; i++) {
+    const pileDiv = document.createElement('div');
+    pileDiv.className = 'pile';
+    for (let j = 0; j < piles[i].length; j++) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      card.textContent = piles[i][j];
+      pileDiv.appendChild(card);
+    }
+    const lbl = document.createElement('div');
+    lbl.className = 'pile-label';
+    lbl.textContent = `Pile ${i + 1}`;
+    pileDiv.appendChild(lbl);
+    area.appendChild(pileDiv);
+  }
+}
+
+function updateStepCounter() {
+  document.getElementById('stepCounter').textContent =
+    sequence.length > 0 ? `Step ${Math.min(step, sequence.length)} / ${sequence.length}` : '';
+}
+
+function toggleAuto() {
+  if (done) return;
+  if (autoRunning) {
+    clearInterval(autoTimer); autoTimer = null;
+    autoRunning = false;
+    document.getElementById('btnAuto').textContent = 'Auto ▷';
+  } else {
+    autoRunning = true;
+    document.getElementById('btnAuto').textContent = 'Pause ⏸';
+    autoTimer = setInterval(() => {
+      if (done || step >= sequence.length) {
+        clearInterval(autoTimer); autoTimer = null; autoRunning = false;
+        document.getElementById('btnAuto').textContent = 'Auto ▷';
+        return;
+      }
+      nextStep();
+    }, 600);
+  }
+}
+
+function showResult() {
+  const box = document.getElementById('resultBox');
+  box.style.display = 'block';
+  document.getElementById('resultTitle').textContent =
+    `LIS length = ${piles.length}  (= number of piles)`;
+
+  const lisVals = lisIndices.map(i => sequence[i]);
+  let html = `<div style="margin-bottom:6px;">One LIS: <strong>${lisVals.join(' &lt; ')}</strong></div>`;
+  html += `<div style="font-size:0.88em;color:#555;">Elements in the sequence belonging to this LIS are shown in blue above. There may be other LIS of the same length.</div>`;
+  document.getElementById('resultBody').innerHTML = html;
+}
+
+// ---- Erdős–Szekeres ----
+function esGenerate() {
+  const n = parseInt(document.getElementById('esN').value);
+  if (isNaN(n) || n < 2 || n > 5) {
+    document.getElementById('esResult').style.display = 'block';
+    document.getElementById('esResult').innerHTML = '<strong>Please enter n between 2 and 5.</strong>';
+    return;
+  }
+
+  const size = n * n + 1;
+  // Generate a random permutation of 1..size
+  const arr = Array.from({length: size}, (_, i) => i + 1);
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+
+  // Run patience sorting to find LIS
+  const lisIdx = computeLIS(arr);
+  const lisLen = lisIdx.length;
+
+  // Find LDS: reverse array, find LIS, then reverse back
+  const arrRev = [...arr].reverse();
+  const ldsIdxRev = computeLIS(arrRev);
+  const ldsIdx = ldsIdxRev.map(i => arr.length - 1 - i).reverse();
+  const ldsLen = ldsIdx.length;
+
+  // Show sequence
+  const seqDiv = document.getElementById('esSeqDisplay');
+  seqDiv.innerHTML = '';
+  const incSet = new Set(lisIdx);
+  const decSet = new Set(ldsIdx);
+
+  for (let i = 0; i < arr.length; i++) {
+    const chip = document.createElement('div');
+    chip.className = 'mono-chip';
+    chip.textContent = arr[i];
+    if (incSet.has(i) && lisLen >= n + 1) chip.classList.add('increasing');
+    else if (decSet.has(i) && ldsLen >= n + 1) chip.classList.add('decreasing');
+    seqDiv.appendChild(chip);
+  }
+
+  // Build result text
+  const resultDiv = document.getElementById('esResult');
+  resultDiv.style.display = 'block';
+
+  let html = `<strong>n = ${n}, sequence length = n²+1 = ${size}</strong><br><br>`;
+
+  if (lisLen >= n + 1) {
+    const vals = lisIdx.map(i => arr[i]);
+    html += `<span style="color:#1a56a0;font-weight:600;">Found increasing subsequence of length ${lisLen}: `;
+    html += vals.join(' &lt; ') + '</span>';
+  }
+  if (ldsLen >= n + 1) {
+    const vals = ldsIdx.map(i => arr[i]);
+    if (lisLen >= n + 1) html += '<br>';
+    html += `<span style="color:#c0392b;font-weight:600;">Found decreasing subsequence of length ${ldsLen}: `;
+    html += vals.join(' &gt; ') + '</span>';
+  }
+
+  html += `<br><br><em>The theorem guarantees a monotone subsequence of length ≥ n+1 = ${n+1}. Found: LIS = ${lisLen}, LDS = ${ldsLen}.</em>`;
+  resultDiv.innerHTML = html;
+}
+
+// Default sequence display on load
+document.getElementById('seqDisplay').innerHTML =
+  '<span style="color:#bbb;font-size:0.9em;padding:8px;">Enter a sequence and press Sort.</span>';
+</script>
+</body>
+</html>

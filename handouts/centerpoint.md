@@ -1,5 +1,11 @@
 # Handout 4 — The Centerpoint Theorem
 
+
+---
+[← Sequences & PMI](sequences_pmi.md) | [Programme Home](../index.md) | [Next: Presentation Guide →](presentation_guide.md) | [📍 Centerpoint Demo](../interactive/centerpoint.html) | [🐍 Notebook (Colab)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/centerpoint.ipynb)
+
+---
+
 *Research Lab Internship — Day 4–5*
 
 ---
@@ -350,3 +356,8 @@ The centerpoint is the point of maximum Tukey depth.
 **Open Problem 2 (Higher-Dimensional Centerpoint):** For points in ℝᵈ, the guaranteed fraction is 1/(d+1). This comes from Helly's theorem which is tight. But can you find a point that is "central" in a stronger sense in high dimensions? This connects to the unsolved **Grünbaum's conjecture** on centrally symmetric bodies.
 
 **Open Problem 3 (Colourful Centerpoint):** Suppose you have n points, each coloured one of k colours, with n/k points of each colour. Must there be a "rainbow" centerpoint — a point that every halfplane through it contains points of all k colours? This is related to the **Colourful Helly theorem** and remains an active research area.
+
+
+---
+
+[← Sequences & PMI](sequences_pmi.md) | [Programme Home](../index.md) | [Next: Presentation Guide →](presentation_guide.md)

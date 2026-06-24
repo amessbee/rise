@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMI Sequence Explorer</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #f8f9fc; color: #1a1a2e; }
+
+  header {
+    background: #0d2b6e;
+    color: white;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  header .nav-links { display:flex; gap:16px; align-items:center; }
+  header a {
+    color: #a8c4f0;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  header a:hover { color: white; text-decoration: underline; }
+  header h1 { font-size: 22px; font-weight: 700; flex: 1; text-align: center; }
+
+  .container { max-width: 1140px; margin: 0 auto; padding: 24px 16px; }
+
+  .explanation {
+    background: #e8f0fe;
+    border-left: 4px solid #1a56a0;
+    border-radius: 4px;
+    padding: 14px 18px;
+    margin-bottom: 20px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: #1a2a4a;
+  }
+
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+  }
+  .controls label { font-weight: 600; font-size: 14px; }
+  .controls select {
+    padding: 7px 12px;
+    border: 1.5px solid #b0bfd8;
+    border-radius: 6px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+  }
+  .btn {
+    padding: 7px 20px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, opacity 0.15s;
+  }
+  .btn-primary { background: #1a56a0; color: white; }
+  .btn-primary:hover { background: #1445a0; }
+  .btn-secondary { background: #e2e8f4; color: #1a2a4a; }
+  .btn-secondary:hover { background: #c8d4e8; }
+  .btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+  .main-area {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .graph-panel {
+    background: white;
+    border: 1.5px solid #dce4f0;
+    border-radius: 10px;
+    padding: 16px;
+    flex: 1 1 420px;
+    min-width: 300px;
+  }
+  .graph-panel h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0d2b6e;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 12px;
+  }
+  #gridSvg {
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+
+  .right-panel {
+    flex: 0 0 420px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .card {
+    background: white;
+    border: 1.5px solid #dce4f0;
+    border-radius: 10px;
+    padding: 14px 16px;
+  }
+  .card h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #0d2b6e;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 10px;
+  }
+
+  #seqDisplay {
+    font-size: 14px;
+    color: #1a2a4a;
+    line-height: 1.7;
+    min-height: 36px;
+  }
+  .seq-initial-label { color: #1a56a0; font-weight: 700; }
+  .seq-step-label    { color: #0a7a0a; }
+
+  #monotoneNote {
+    margin-top: 8px;
+    font-size: 13px;
+    font-style: italic;
+    color: #444;
+    border-top: 1px solid #e0e8f4;
+    padding-top: 8px;
+  }
+
+  #propTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  #propTable th {
+    background: #e8f0fe;
+    color: #0d2b6e;
+    font-weight: 700;
+    text-align: left;
+    padding: 6px 10px;
+    border-bottom: 2px solid #b0c4e0;
+  }
+  #propTable td {
+    padding: 5px 10px;
+    border-bottom: 1px solid #edf0f7;
+    color: #222;
+  }
+  #propTable tr:last-child td { border-bottom: none; }
+  .mono-ok  { color: #2a7a2a; font-weight: 700; }
+  .mono-fail{ color: #c0392b; font-weight: 700; }
+
+  #tableWrap {
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #dce4f0;
+    border-radius: 6px;
+  }
+
+  .hint {
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+    padding: 10px 0;
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="nav-links">
+    <a href="../index.html">← Back to Programme</a>
+    <a href="zero_forcing_game.html">Zero Forcing Game</a>
+  </div>
+  <h1>PMI Sequence Explorer</h1>
+  <span style="width:220px"></span>
+</header>
+
+<div class="container">
+  <div class="explanation">
+    <strong>Propagation Monotone Increasing (PMI)</strong> sequences arise in zero forcing on grid graphs.
+    When a zero forcing propagation is run on an <em>n</em>&times;<em>m</em> grid, the order in which
+    vertices turn blue forms a <em>propagation sequence</em>.
+    This sequence is called <strong>2D-monotone</strong> (or PMI) if the <em>row indices</em> of the
+    forced vertices are non-decreasing throughout the sequence.
+    Use this explorer to select an initial blue set, simulate propagation, and inspect whether the
+    resulting sequence satisfies the PMI property — step by step.
+  </div>
+
+  <div class="controls">
+    <label for="sizeSelect">Grid size:</label>
+    <select id="sizeSelect">
+      <option value="2">2 × 2</option>
+      <option value="3" selected>3 × 3</option>
+      <option value="4">4 × 4</option>
+      <option value="5">5 × 5</option>
+    </select>
+    <button class="btn btn-secondary" id="resetBtn">Reset</button>
+    <button class="btn btn-primary"   id="simBtn">Simulate</button>
+  </div>
+
+  <div class="main-area">
+    <div class="graph-panel">
+      <h3>Grid Graph — click vertices to select initial blue set</h3>
+      <svg id="gridSvg" xmlns="http://www.w3.org/2000/svg"></svg>
+    </div>
+    <div class="right-panel">
+      <div class="card">
+        <h3>Propagation Sequence</h3>
+        <div id="seqDisplay"><span class="hint">Select vertices and click Simulate.</span></div>
+        <div id="monotoneNote"></div>
+      </div>
+      <div class="card">
+        <h3>Step-by-Step Table</h3>
+        <div id="tableWrap">
+          <table id="propTable">
+            <thead>
+              <tr>
+                <th>Step</th>
+                <th>Vertex (row, col)</th>
+                <th>Row index</th>
+                <th>Col index</th>
+                <th>PMI ✓/✗</th>
+              </tr>
+            </thead>
+            <tbody id="propTbody"></tbody>
+          </table>
+        </div>
+        <p style="font-size:12px;color:#888;margin-top:6px;">
+          PMI checks that each row index &ge; previous row index. Initial vertices shown in blue.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ─── State ─────────────────────────────────────────────────────────────────
+let N = 3;                  // grid dimension (N×N)
+let blue = [];              // [row][col] => boolean
+let simDone = false;
+let propSeq = [];           // [{row,col,step,initial}]
+
+const CELL = 88;            // px between centres
+const RADIUS = 26;          // vertex radius
+const MARGIN = 48;
+
+const gridSvg = document.getElementById('gridSvg');
+
+// ─── Build grid ──────────────────────────────────────────────────────────────
+function initGrid(n) {
+  N = n;
+  blue = Array.from({length:N}, ()=>Array(N).fill(false));
+  propSeq = [];
+  simDone = false;
+  drawGrid([]);
+  updateTable([]);
+  document.getElementById('seqDisplay').innerHTML = '<span class="hint">Select vertices and click Simulate.</span>';
+  document.getElementById('monotoneNote').textContent = '';
+}
+
+function vertexPos(r,c) {
+  return [MARGIN + c*CELL, MARGIN + r*CELL];
+}
+
+function drawGrid(flashPairs=[]) {
+  const W = MARGIN*2 + (N-1)*CELL;
+  const H = MARGIN*2 + (N-1)*CELL;
+  gridSvg.setAttribute('width', W);
+  gridSvg.setAttribute('height', H);
+  gridSvg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+  gridSvg.innerHTML = '';
+
+  // Edges
+  for(let r=0;r<N;r++) for(let c=0;c<N;c++){
+    const [x1,y1]=vertexPos(r,c);
+    if(c<N-1){
+      const [x2,y2]=vertexPos(r,c+1);
+      const ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+      ln.setAttribute('x1',x1);ln.setAttribute('y1',y1);
+      ln.setAttribute('x2',x2);ln.setAttribute('y2',y2);
+      ln.setAttribute('stroke','#888');ln.setAttribute('stroke-width','2');
+      gridSvg.appendChild(ln);
+    }
+    if(r<N-1){
+      const [x2,y2]=vertexPos(r+1,c);
+      const ln=document.createElementNS('http://www.w3.org/2000/svg','line');
+      ln.setAttribute('x1',x1);ln.setAttribute('y1',y1);
+      ln.setAttribute('x2',x2);ln.setAttribute('y2',y2);
+      ln.setAttribute('stroke','#888');ln.setAttribute('stroke-width','2');
+      gridSvg.appendChild(ln);
+    }
+  }
+
+  // Vertices
+  for(let r=0;r<N;r++) for(let c=0;c<N;c++){
+    const [cx,cy]=vertexPos(r,c);
+    const isBlue=blue[r][c];
+    const isFlash=flashPairs.some(([fr,fc])=>fr===r&&fc===c);
+
+    const circle=document.createElementNS('http://www.w3.org/2000/svg','circle');
+    circle.setAttribute('cx',cx); circle.setAttribute('cy',cy);
+    circle.setAttribute('r',RADIUS);
+    circle.setAttribute('fill', isFlash ? '#f0b429' : (isBlue ? '#1a56a0' : 'white'));
+    circle.setAttribute('stroke', isBlue||isFlash ? '#0a1f5a' : '#1a56a0');
+    circle.setAttribute('stroke-width','2.5');
+    if(!simDone){ circle.style.cursor='pointer'; }
+    circle.addEventListener('click',()=>toggleCell(r,c));
+    gridSvg.appendChild(circle);
+
+    // Label: (row,col) — 1-indexed
+    const text=document.createElementNS('http://www.w3.org/2000/svg','text');
+    text.setAttribute('x',cx); text.setAttribute('y',cy+1);
+    text.setAttribute('text-anchor','middle');
+    text.setAttribute('dominant-baseline','middle');
+    text.setAttribute('font-size', N<=3 ? '11' : '10');
+    text.setAttribute('font-weight','700');
+    text.setAttribute('fill', isBlue||isFlash ? 'white' : '#1a56a0');
+    text.setAttribute('pointer-events','none');
+    text.textContent = `(${r+1},${c+1})`;
+    gridSvg.appendChild(text);
+  }
+}
+
+// ─── Toggle cell ─────────────────────────────────────────────────────────────
+function toggleCell(r,c) {
+  if(simDone) return;
+  blue[r][c] = !blue[r][c];
+  drawGrid([]);
+}
+
+// ─── Zero forcing propagation ────────────────────────────────────────────────
+function getNeighbours(r,c){
+  const nb=[];
+  if(r>0)   nb.push([r-1,c]);
+  if(r<N-1) nb.push([r+1,c]);
+  if(c>0)   nb.push([r,c-1]);
+  if(c<N-1) nb.push([r,c+1]);
+  return nb;
+}
+
+function simulate() {
+  // Build initial sequence
+  propSeq = [];
+  for(let r=0;r<N;r++) for(let c=0;c<N;c++){
+    if(blue[r][c]) propSeq.push({r,c,step:0,initial:true});
+  }
+  if(propSeq.length===0){
+    alert('Please select at least one blue vertex first.');
+    return;
+  }
+
+  // Run propagation
+  let step=1;
+  let changed=true;
+  const state = blue.map(row=>[...row]);
+
+  while(changed){
+    changed=false;
+    const toForce=[];
+    for(let r=0;r<N;r++) for(let c=0;c<N;c++){
+      if(!state[r][c]) continue;
+      const nb=getNeighbours(r,c);
+      const whiteNb=nb.filter(([nr,nc])=>!state[nr][nc]);
+      if(whiteNb.length===1) toForce.push(whiteNb[0]);
+    }
+    const unique=[];
+    const seen=new Set();
+    for(const [r,c] of toForce){
+      const k=r*100+c;
+      if(!seen.has(k)){seen.add(k);unique.push([r,c]);}
+    }
+    if(unique.length>0){
+      changed=true;
+      for(const [r,c] of unique){
+        state[r][c]=true;
+        propSeq.push({r,c,step,initial:false});
+      }
+      step++;
+    }
+  }
+
+  // Commit state
+  for(let r=0;r<N;r++) for(let c=0;c<N;c++) blue[r][c]=state[r][c];
+  simDone=true;
+  drawGrid([]);
+  renderSequence();
+  updateTable(propSeq);
+}
+
+// ─── Render sequence text ────────────────────────────────────────────────────
+function renderSequence() {
+  const initParts=propSeq.filter(s=>s.initial).map(s=>`(${s.r+1},${s.c+1})`);
+  let html=`<span class="seq-initial-label">Initial: {${initParts.join(', ')}}</span>`;
+
+  const forced=propSeq.filter(s=>!s.initial);
+  if(forced.length===0){
+    html+='<div style="color:#888;margin-top:6px;font-size:13px;">No propagation occurred — set does not force any new vertex.</div>';
+  } else {
+    const byStep={};
+    for(const s of forced){ if(!byStep[s.step]) byStep[s.step]=[]; byStep[s.step].push(`(${s.r+1},${s.c+1})`); }
+    for(const st of Object.keys(byStep).sort((a,b)=>a-b)){
+      html+=`<div class="seq-step-label">Step ${st}: {${byStep[st].join(', ')}}</div>`;
+    }
+  }
+
+  // Is it a ZFS?
+  const allBlue = blue.every(row=>row.every(Boolean));
+  if(allBlue){
+    html+=`<div style="color:#2a7a2a;font-weight:700;margin-top:8px;">✓ Complete zero forcing — all vertices turned blue.</div>`;
+  } else {
+    const blueCount=blue.flat().filter(Boolean).length;
+    html+=`<div style="color:#a06020;font-weight:600;margin-top:8px;">Propagation stopped at ${blueCount}/${N*N} blue vertices (not a zero forcing set).</div>`;
+  }
+
+  document.getElementById('seqDisplay').innerHTML=html;
+
+  // PMI note
+  const forcedSeq=propSeq.filter(s=>!s.initial);
+  if(forcedSeq.length===0){
+    document.getElementById('monotoneNote').textContent='';
+    return;
+  }
+  let isPMI=true;
+  let prevRow=-1;
+  for(const s of forcedSeq){ if(s.r+1<prevRow){isPMI=false;break;} prevRow=s.r+1; }
+  const noteEl=document.getElementById('monotoneNote');
+  noteEl.innerHTML=`A propagation sequence is 2D-monotone if the row indices are non-decreasing throughout. &nbsp; <strong style="color:${isPMI?'#2a7a2a':'#c0392b'}">${isPMI?'✓ This sequence IS PMI.':'✗ This sequence is NOT PMI.'}</strong>`;
+}
+
+// ─── Table ───────────────────────────────────────────────────────────────────
+function updateTable(seq) {
+  const tbody=document.getElementById('propTbody');
+  if(seq.length===0){ tbody.innerHTML='<tr><td colspan="5" class="hint">Run Simulate to populate.</td></tr>'; return; }
+
+  let html='';
+  let prevRow=-1;
+  let stepCounter=0;
+
+  for(const s of seq){
+    const row1=s.r+1, col1=s.c+1;
+    let monoCell='';
+    if(s.initial){
+      monoCell=`<span style="color:#1a56a0;font-weight:700;">—</span>`;
+    } else {
+      const ok=(row1>=prevRow);
+      monoCell=ok
+        ? `<span class="mono-ok">✓</span>`
+        : `<span class="mono-fail">✗</span>`;
+    }
+    const stepLabel=s.initial ? `0 (init)` : `${s.step}`;
+    const rowStyle=s.initial ? 'background:#eef4ff;' : '';
+    html+=`<tr style="${rowStyle}">
+      <td>${stepLabel}</td>
+      <td>(${row1}, ${col1})</td>
+      <td>${row1}</td>
+      <td>${col1}</td>
+      <td>${monoCell}</td>
+    </tr>`;
+    if(!s.initial && row1>=prevRow) prevRow=row1;
+    else if(!s.initial) prevRow=row1; // still update tracker
+  }
+  tbody.innerHTML=html;
+}
+
+// ─── Events ──────────────────────────────────────────────────────────────────
+document.getElementById('sizeSelect').addEventListener('change', e=>{
+  initGrid(parseInt(e.target.value));
+});
+document.getElementById('resetBtn').addEventListener('click', ()=>{
+  initGrid(N);
+});
+document.getElementById('simBtn').addEventListener('click', ()=>{
+  if(!simDone) simulate();
+  else alert('Click Reset to start over with a new initial set.');
+});
+
+// ─── Init ────────────────────────────────────────────────────────────────────
+initGrid(3);
+</script>
+</body>
+</html>

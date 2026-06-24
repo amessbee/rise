@@ -1,0 +1,29 @@
+title: RISE — Research Internship Programme
+description: >
+  A four-week mathematics research programme for A-level students covering
+  graph theory, zero forcing sets, Erdős–Szekeres theorem, PMI sequences,
+  and the centerpoint theorem.
+
+url: "https://amessbee.github.io"
+baseurl: "/rise"
+
+theme: minima
+
+markdown: kramdown
+kramdown:
+  input: GFM
+
+plugins:
+  - jekyll-relative-links
+
+relative_links:
+  enabled: true
+  collections: true
+
+# Navigation shown in the site header
+header_pages:
+  - index.md
+  - plan.md
+
+minima:
+  skin: classic

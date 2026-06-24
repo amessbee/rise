@@ -39,6 +39,31 @@ On **Day 4 of each week** (Thursday), the structure changes: the morning is a fu
 
 ---
 
+## Host Assignments
+
+Each session is led by one student coordinator. **Claim a day** by replacing `—` with your name and committing. Students: **Danish · Uzayr · Nimra · Ahsan · Maaz · Basit**
+
+| Day | Week | Theme | Handout / Demo | Host |
+|-----|------|-------|---------------|------|
+| 1 | W1 Mon | Welcome, Survey, Graph Introduction | [Networks Intro](handouts/networks_intro.md) | — |
+| 2 | W1 Tue | Graph Families, Trees, Bipartite | [Networks Intro](handouts/networks_intro.md) | — |
+| 3 | W1 Wed | Colouring, Planarity, Euler's Formula | [Networks Intro](handouts/networks_intro.md) | — |
+| 4 | W1 Thu | Problem Session + Mini-Presentations | — | — |
+| 5 | W2 Mon | Controllability Motivation + Zero Forcing Intro | [Zero Forcing](handouts/zero_forcing.md) · [Game](interactive/zero_forcing_game.html) | — |
+| 6 | W2 Tue | Computing Z(G): Bounds and Examples | [Zero Forcing](handouts/zero_forcing.md) · [Notebook](notebooks/zero_forcing.ipynb) | — |
+| 7 | W2 Wed | Zero Forcing Game + Propagation Sequences | [PMI Grid](interactive/pmi_grid.html) | — |
+| 8 | W2 Thu | Problem Session + Mini-Presentations | — | — |
+| 9 | W3 Mon | Sequences, Patience Sorting, Erdős–Szekeres | [Sequences & PMI](handouts/sequences_pmi.md) · [Demo](interactive/sequences.html) | — |
+| 10 | W3 Tue | PMI Sequences + Controllability Connection | [Sequences & PMI](handouts/sequences_pmi.md) · [Notebook](notebooks/sequences_erdos.ipynb) | — |
+| 11 | W3 Wed | Centerpoint Theorem | [Centerpoint](handouts/centerpoint.md) · [Demo](interactive/centerpoint.html) | — |
+| 12 | W3 Thu | Final Presentations + Open Problems | — | — |
+| 13 | W4 Mon | What Is a Research Presentation? | [Presentation Guide](handouts/presentation_guide.md) | — |
+| 14 | W4 Tue | Structuring the Narrative | [Presentation Guide](handouts/presentation_guide.md) | — |
+| 15 | W4 Wed | Delivery and Rehearsal | [Presentation Guide](handouts/presentation_guide.md) | — |
+| 16 | W4 Thu | Final Presentations | — | — |
+
+---
+
 ## Week 1 — Graphs and Networks
 
 ### Week 1 Goals
@@ -51,6 +76,8 @@ On **Day 4 of each week** (Thursday), the structure changes: the morning is a fu
 ---
 
 ### Day 1 (Week 1, Monday) — Welcome, Survey, and the World of Networks
+
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
 **Theme:** Why do we study graphs? What is a graph?
 
@@ -144,6 +171,8 @@ Preview Day 2: "Tomorrow we'll formalise these definitions and explore special f
 
 ### Day 2 (Week 1, Tuesday) — Formal Definitions and Special Graphs
 
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
+
 **Theme:** Building the vocabulary of graph theory.
 
 ---
@@ -235,6 +264,8 @@ Key facts (prove or sketch proofs as appropriate):
 
 ### Day 3 (Week 1, Wednesday) — Graph Properties and Colouring
 
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
+
 **Theme:** Deeper properties — chromatic number, planarity, and graph invariants.
 
 ---
@@ -322,6 +353,8 @@ Brief introduction to two famous algorithms (describe informally, no code requir
 
 ### Day 4 (Week 1, Thursday) — Problem Session and Mini-Presentations
 
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
+
 **Theme:** Consolidate Week 1; students present.
 
 ---
@@ -375,6 +408,8 @@ Coordinator and other students ask at least one question per presentation. Empha
 ---
 
 ### Day 5 (Week 2, Monday) — Controllability Motivation
+
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
 **Theme:** What does it mean to control a network?
 
@@ -457,6 +492,8 @@ Discuss solutions. Introduce the key question: **how does the structure of G det
 ---
 
 ### Day 6 (Week 2, Tuesday) — Computing Z(G): Examples and Bounds
+
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
 **Theme:** How do we prove lower bounds on Z(G)?
 
@@ -558,6 +595,8 @@ This is a deep result. Students do not need to prove it, but they should see why
 
 ### Day 7 (Week 2, Wednesday) — The Zero Forcing Game and Propagation Sequences
 
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
+
 **Theme:** Playing the game; understanding propagation order.
 
 ---
@@ -646,6 +685,8 @@ These questions motivate Week 3. The answers connect to the PMI sequences define
 
 ### Day 8 (Week 2, Thursday) — Problem Session and Mini-Presentations
 
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
+
 **0:00–1:45 — Extended Problem Exploration**
 
 Students choose an investigation thread:
@@ -689,6 +730,8 @@ End of Week 2: collect new sticky-note questions for Week 3.
 ---
 
 ### Day 9 (Week 3, Monday) — Sequences and Erdős–Szekeres
+
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
 **Theme:** Order in disorder.
 
@@ -768,6 +811,8 @@ Work through Puzzle E from the handout. Introduce the connection to zero forcing
 ---
 
 ### Day 10 (Week 3, Tuesday) — PMI Sequences and Controllability
+
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
 **Theme:** The heart of the research.
 
@@ -850,6 +895,8 @@ Students discuss which open problem they find most compelling and why.
 ---
 
 ### Day 11 (Week 3, Wednesday) — The Centerpoint Theorem
+
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
 **Theme:** A completely separate gem of discrete geometry.
 
@@ -947,6 +994,8 @@ Discuss applications of the centerpoint:
 ---
 
 ### Day 12 (Week 3, Thursday) — Final Presentations and Open Problems
+
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
 **0:00–0:30 — Warm-up: Open Problem Speed Round**
 
@@ -1080,6 +1129,8 @@ By the end of Thursday (Day 16), each student will have a **12–15 minute prese
 
 ### Day 13 (Week 4, Monday) — What Is a Research Presentation?
 
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
+
 **Theme:** Audiences, formats, and the art of mathematical storytelling.
 
 ---
@@ -1195,6 +1246,8 @@ Each student finalises which topic from Weeks 1–3 they will present, and which
 
 ### Day 14 (Week 4, Tuesday) — Structuring the Narrative
 
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
+
 **Theme:** From outline to script. Choosing what to cut.
 
 ---
@@ -1302,6 +1355,8 @@ Students sketch their full slide deck or poster layout by end of session (rough 
 
 ### Day 15 (Week 4, Wednesday) — Delivery and Rehearsal
 
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
+
 **Theme:** From script to performance.
 
 ---
@@ -1384,6 +1439,8 @@ Each presenter hears: two things that worked, one specific thing to fix. Not mor
 ---
 
 ### Day 16 (Week 4, Thursday) — Final Presentations
+
+> **Host:** — *(Danish · Uzayr · Nimra · Ahsan · Maaz · Basit — replace `—` with your name)*
 
 **Theme:** Ready for the outside world.
 

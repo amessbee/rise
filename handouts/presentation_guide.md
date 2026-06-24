@@ -1,5 +1,11 @@
 # Handout 5 — How to Give a Research Presentation
 
+
+---
+[← Centerpoint](centerpoint.md) | [Programme Home](../index.md)
+
+---
+
 *Research Lab Internship — Week 4*
 
 ---
@@ -438,3 +444,8 @@ One thing distinguishes mathematics from most public communication: in mathemati
 - If you don't know the answer to a question: say "I don't know."
 
 This is not a weakness. It is what makes mathematics trustworthy. Your audience will respect you more for it.
+
+
+---
+
+[← Centerpoint](centerpoint.md) | [Programme Home](../index.md)
