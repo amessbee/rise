@@ -46,6 +46,17 @@ Everything in your talk serves this sentence. If a slide doesn't serve it, cut t
 
 Every good mathematics talk, regardless of length, has four acts. This is not a rigid formula — it is a description of what audiences need.
 
+```
+┌──────────┬───────────────────┬────────────────────────────┬──────────────┐
+│  HOOK    │      SETUP        │         RESULT             │   SO WHAT    │
+│ 10–15%   │     20–25%        │         40–50%             │   15–20%     │
+│ ~2 min   │     ~3 min        │         ~6 min             │   ~2 min     │
+└──────────┴───────────────────┴────────────────────────────┴──────────────┘
+      ↑              ↑                       ↑                     ↑
+   Question      Definitions            Main theorem           Open problems
+   or puzzle     + examples             + proof/evidence       + connections
+```
+
 ---
 
 ### Act 1 — The Hook (roughly 10–15% of your time)
@@ -152,6 +163,24 @@ Examples:
 
 ---
 
+### Timing Reference: A 12-Minute Talk
+
+The diagram below maps the four acts onto actual clock minutes for a 12-minute presentation. Use it to rehearse and to cut material that doesn't fit.
+
+```
+0        2        5              11       13  (minutes)
+│        │        │               │        │
+├────────┼────────┼───────────────┼────────┤
+│  HOOK  │  SETUP │    RESULT     │SO WHAT │
+│ puzzle │ 2 defs │ theorem+proof │open Qs │
+│ + story│+ 2 figs│  + 1 example  │+closing│
+└────────┴────────┴───────────────┴────────┘
+```
+
+If you are running a 15-minute talk, scale each segment up by roughly 25%. The proportions stay the same; the absolute durations shift.
+
+---
+
 ## Section 3 — Slides and Poster Design
 
 ### Slides
@@ -195,6 +224,54 @@ Reading the slide titles of a good talk, in order, should tell you the complete 
 
 ---
 
+### What a Slide Should Look Like
+
+The contrast below illustrates the cardinal rule in practice. The BAD slide tries to be a document; the GOOD slide is a single visual argument.
+
+**BAD slide** — too much text, no figure, font too small:
+
+```
+╔══════════════════════════════════════════════╗
+║  ZERO FORCING SETS: DEFINITION AND EXAMPLES ║
+╠══════════════════════════════════════════════╣
+║  • A zero forcing set S is a subset of V(G) ║
+║    such that when S is coloured blue and the ║
+║    colour change rule is applied repeatedly, ║
+║    eventually all vertices of G become blue. ║
+║  • The colour change rule states that a blue ║
+║    vertex with exactly one white neighbour   ║
+║    forces that neighbour to become blue.     ║
+║  • We define Z(G) = min|S| over all zero     ║
+║    forcing sets S of G.                      ║
+║  • Examples: Z(Pₙ)=1, Z(Cₙ)=2, Z(Kₙ)=n-1  ║
+║  • Proof: consider vertex v with deg(v)=1... ║
+╚══════════════════════════════════════════════╝
+Font: 12pt. Five bullet points. No figure. Dense text.
+```
+
+**GOOD slide** — one idea, one figure, one equation:
+
+```
+╔══════════════════════════════════════════════╗
+║  One endpoint controls the whole path        ║
+╠══════════════════════════════════════════════╣
+║                                              ║
+║   ● ─── ○ ─── ○ ─── ○ ─── ○               ║
+║   │                                          ║
+║   └─ forces ──►  ● ─── ○ ─── ○ ─── ○      ║
+║                   │                          ║
+║                   └─ forces ──►  etc.        ║
+║                                              ║
+║   Z(Pₙ) = 1                                 ║
+║                                              ║
+╚══════════════════════════════════════════════╝
+Font: 28pt. One idea. One figure. One equation.
+```
+
+The good slide's title is a conclusion. The figure does the explaining. The equation is the payoff. Your spoken words supply all the detail that is missing — and the audience is listening to you, not reading.
+
+---
+
 ### Posters
 
 A poster is a different medium from a talk. The audience walks up, glances at your poster, and decides in 5 seconds whether to engage. You then give a 3–5 minute pitch.
@@ -203,6 +280,29 @@ A poster is a different medium from a talk. The audience walks up, glances at yo
 - Left column: The problem and motivation
 - Middle column: Your main result / exploration
 - Right column: Implications, open problems, references
+
+```
+┌──────────────────────────────────────────────────────────────────┐
+│              TITLE (large font, readable from 3m)                │
+│         Your Name • Lab Name • Date                              │
+├────────────────────┬──────────────────┬───────────────────────────┤
+│   INTRODUCTION     │   MAIN RESULT    │   IMPLICATIONS            │
+│                    │                  │                           │
+│  • The problem     │  Theorem:        │  • Why it matters         │
+│                    │                  │                           │
+│  • Why it matters  │  [Figure]        │  • Open questions         │
+│                    │                  │                           │
+│  [Motivating       │  Key example:    │  • What's next?           │
+│   diagram]         │                  │                           │
+│                    │  [Figure]        │  [Diagram or table]       │
+│  • Background      │                  │                           │
+│    definitions     │  Proof sketch:   │  References:              │
+│                    │  ...             │  • [1] Author, Year       │
+│  [Figure]          │                  │  • [2] ...                │
+├────────────────────┴──────────────────┴───────────────────────────┤
+│              ~40% white space throughout  │  Acknowledgements     │
+└──────────────────────────────────────────────────────────────────┘
+```
 
 **Rules:**
 - Title: readable from 3 metres (very large font, ≥ 60pt)
@@ -232,6 +332,23 @@ A poster is a different medium from a talk. The audience walks up, glances at yo
 
 **Look at your audience.** Look at the slide only to orient yourself, then return to faces. When writing on the whiteboard: write, pause, turn back, then speak.
 
+```
+   Presenter                         Audience
+      (you)
+                     80%
+       [P] ════════════════════════► [faces]
+
+        │
+        │ 20%
+        │
+        ▼
+     [slide]
+   (glance only,
+    to orient)
+```
+
+Spend 80% of your eye contact on audience faces. Glance at the slide only when you need to point something out or reorient yourself. Speaking to the screen is one of the most common — and most damaging — habits in student presentations.
+
 **Pause intentionally.** After stating a definition or a theorem, pause for 3–5 seconds. It feels like an eternity. To the audience it feels like a respectful moment to absorb what you said.
 
 **Signpost constantly.** Before each new section, tell the audience what's coming:
@@ -248,6 +365,27 @@ A poster is a different medium from a talk. The audience walks up, glances at yo
 3. **"I don't know"** is always acceptable. Follow with "but my guess is..." or "that's a really interesting direction."
 4. **"That's outside what I covered, but briefly..."** handles questions that go beyond your talk without dismissing the questioner.
 5. If a question is confusing: **"Could you say a bit more about what you mean?"** buys you time and is always polite.
+
+The diagram below shows the recommended response sequence for any question:
+
+```
+   Question asked
+        │
+        ▼
+   Repeat / rephrase ("So you're asking...")
+        │
+        ▼
+   Pause (think — silence is fine here)
+        │
+        ├─── Know the answer? ──► Answer clearly and concisely
+        │
+        └─── Don't know? ──► "I don't know, but my guess is..."
+                                          │
+                                          ▼
+                               "That's a great future direction"
+```
+
+Never rush straight from hearing the question to giving an answer. The rephrase step confirms you understood, buys thinking time, and ensures the whole room heard the question.
 
 ---
 

@@ -41,6 +41,21 @@ $$\bar{x} = \frac{1}{n}\sum_{i=1}^n x_i, \qquad \bar{y} = \frac{1}{n}\sum_{i=1}^
 
 The average is **not robust** to outliers. In statistics, we say the average has **breakdown point 0** — even a single bad measurement can corrupt it completely.
 
+Here is a concrete 1D illustration of how badly a single outlier can distort the average:
+
+```
+  Nine values clustered between 10 and 20, one outlier at 1000:
+
+  ──●──●──●──●──●──●──●──●──●────────────────────────────────────────●──
+   10  11  12  13  14  15  16  17  18                               1000
+
+  Average ≈ 107   ─────────────────────────────────────►  (way out here!)
+  Median  = 14    ●  (stays snugly in the cluster)
+```
+
+The average is dragged nearly 90 units away from the cluster.  The median
+ignores the outlier entirely and remains at 14.
+
 ---
 
 ## Option 2: The Median (1D)
@@ -54,6 +69,22 @@ Median = 14. The outlier (100) has no effect on the result.
 **Key property of the median:** Any halfline (ray) starting at the median contains at least half the data points.
 
 More precisely: there are at least ⌈n/2⌉ values ≤ median and at least ⌈n/2⌉ values ≥ median.
+
+Here is what that looks like for 7 values:
+
+```
+  Values: 2, 5, 7, 9, 12, 15, 18
+
+  ──●───────●───────●────●────●───────●────────●──
+   2         5       7   9    12       15       18
+                          │
+                        Median = 9
+
+  ◄── 4 values ──────────│──────── 4 values ──────►
+       (≥ n/2 = 3.5)     │        (≥ n/2 = 3.5)
+
+  Every halfline through the median contains ≥ ⌈7/2⌉ = 4 values.
+```
 
 **Breakdown point:** The median can tolerate up to 50% corrupted data and still give a reasonable answer. This is the best possible for any estimator.
 
@@ -71,21 +102,31 @@ Let's test with a small example. Consider 5 points:
 
 $$P_1 = (3, 0), \quad P_2 = (4, 0), \quad P_3 = (5, 0), \quad P_4 = (0, 3), \quad P_5 = (0, 4)$$
 
+Here they are on a coordinate grid:
+
 ```
-  y
-5 |
-4 |  ● P₅
-3 |  ● P₄
-2 |
-1 |
-0 |_ _ _ ●_ _ ●_ _ ●_ _  x
-  0  1  2  3  4  5
-              P₁  P₂  P₃
+    y
+    4 │  ●P₅
+    3 │  ●P₄
+    2 │
+    1 │
+    0 └──────────●──●──●── x
+                 3  4  5
+                 P₁ P₂ P₃
 ```
 
-**Coordinatewise medians:**
-- x-values: 0, 0, 3, 4, 5 → median = **3**
-- y-values: 0, 0, 0, 3, 4 → median = **0**
+Three points lie on the x-axis (y = 0) and two points lie on the y-axis (x = 0).  The data forms an "L" shape — quite spread out in two different directions.
+
+**Coordinatewise median computation — step by step:**
+
+```
+  x-values: 3, 4, 5, 0, 0   →   sorted: 0, 0, [3], 4, 5   →   median x = 3
+  y-values: 0, 0, 0, 3, 4   →   sorted: 0, 0, [0], 3, 4   →   median y = 0
+
+  Coordinatewise median = (3, 0) = P₁
+```
+
+The brackets [·] mark the middle element after sorting.
 
 So the coordinatewise median is **(3, 0)** — which is the point P₁.
 
@@ -102,14 +143,20 @@ Let's check P₁ = (3, 0):
 Draw the line through P₁ = (3,0) with equation y = -¾(x - 3), i.e., y = -¾x + 9/4.
 
 ```
-  y
-  |   / line
-4 |  ● P₅         Points above the line:
-3 |  ● P₄           P₁, P₂, P₃, P₄, P₅ — all 5!
-  | /              Points below the line:
-  |/_ _ _ _ _       only P₁ is on the line.
- /|          x
-  P₁ P₂ P₃
+    y
+    4 │  ●P₅       ╱  ← line y = −¾(x − 3)
+    3 │  ●P₄     ╱
+    2 │         ╱
+    1 │       ╱
+    0 └──●P₁╱──●P₂──●P₃── x
+         3     4     5
+
+  Halfplane ABOVE the line: contains P₁, P₂, P₃, P₄, P₅ = 5 points  ✓
+  Halfplane BELOW the line: contains only P₁ = 1 point               ✗ (need ≥ 2)
+
+  1 out of 5 = 20%,  but the threshold is n/3 ≈ 33%.
+
+  Therefore (3, 0) = P₁ is NOT a valid centerpoint.
 ```
 
 The halfplane *below* this line (on the opposite side from P₄ and P₅) contains **only P₁ itself**. That is just 1 out of 5 points, which is only 20% — far less than 1/3 ≈ 33%.
@@ -133,13 +180,30 @@ Equivalently: no halfplane that *excludes* c can contain more than 2n/3 of the p
 
 **Back to our example:** For P = {(3,0),(4,0),(5,0),(0,3),(0,4)}, what is the centerpoint?
 
-A good candidate: the "central" region of the convex hull of the points. 
+A good candidate: a point inside the "spread" of the data, away from all edges.  Let us try **c = (1.5, 1)**:
 
-Let's try c = (2, 1):
-- Every halfplane through (2,1) must contain at least ⌈5/3⌉ = 2 points.
-- Intuitively, (2,1) is "inside" the spread of the data.
+```
+    y
+    4 │  ●P₅
+    3 │  ●P₄
+    2 │
+    1 │     ★  ← candidate centerpoint c ≈ (1.5, 1)
+    0 └─────────●──●──●── x
+                3  4  5
+                P₁ P₂ P₃
 
-*(Full verification: check several directions — above, below, left, right, and diagonal.)*
+  Checking a few halfplanes through c = (1.5, 1):
+
+  Halfplane to the RIGHT  (x > 1.5):  P₁, P₂, P₃          = 3 points  ✓
+  Halfplane to the LEFT   (x < 1.5):  P₄, P₅               = 2 points  ✓
+  Halfplane ABOVE         (y > 1):    P₄, P₅                = 2 points  ✓
+  Halfplane BELOW         (y < 1):    P₁, P₂, P₃            = 3 points  ✓
+
+  In every direction, at least 2 = ⌈5/3⌉ points lie on each side.
+  So c = (1.5, 1) IS a valid centerpoint.  ✓
+```
+
+*(Full verification requires checking all infinitely many halfplanes, but the argument works by continuity — try it as a puzzle!)*
 
 ---
 
@@ -197,7 +261,50 @@ In the plane (d=2): if every 3 of your convex sets overlap pairwise, then all of
 **Example (d=1):** Let C₁, C₂, ..., Cₙ be intervals on the number line. If every 2 of them overlap, then all n of them share a common point (i.e., they all have a common intersection).  
 *(This is clear from the 1D median: the median of all left endpoints lies in all intervals if any two overlap.)*
 
+Here is a picture of four intervals all sharing a common point:
+
+```
+  Interval 1:  ├────────────────────┤
+  Interval 2:         ├──────────────────────┤
+  Interval 3:              ├────────────────────────┤
+  Interval 4:       ├────────────────────────┤
+
+                           ↑
+                    common point in all 4
+
+  Any two of these intervals overlap — and sure enough, there is a single
+  point (marked above) that belongs to every one of them.
+```
+
 **Counterexample showing d+1 is necessary:** In the plane, take 3 intervals (thin rectangles) arranged like a "Y" — each pair overlaps at the centre, but no single point is in all three.
+
+Here is what that Y-configuration looks like:
+
+```
+            ┌──────┐
+            │      │
+            │  A   │   ← Strip A (tall vertical strip)
+            │      │
+       ┌────┼──────┼────────────┐
+       │    │      │     B      │   ← Strip B (wide horizontal strip)
+       └────┼──────┼────────────┘
+            │      │
+    ┌────────┼──────┼────┐
+    │   C    │      │    │           ← Strip C (tilted / second crossing strip)
+    └────────┼──────┼────┘
+             │      │
+             └──────┘
+
+  A ∩ B  ≠ ∅   (they cross in the upper middle)   ✓
+  A ∩ C  ≠ ∅   (they cross in the lower middle)   ✓
+  B ∩ C  ≠ ∅   (they overlap on the left side)    ✓
+
+  A ∩ B ∩ C = ∅   (no single point is in all three)  ✗
+
+  Each pair overlaps, but the three strips have NO common triple point.
+  This shows Helly's "every d+1" condition (d+1 = 3 in the plane) is
+  genuinely necessary — pairwise intersection alone is not enough in 2D.
+```
 
 ---
 
