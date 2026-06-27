@@ -39,7 +39,7 @@ Algebra | Calculus | Statistics | Probability | Trigonometry | Vectors | Matrice
 - Cryptography (modular arithmetic)
 - Game theory
 
-**4. Describe a mathematical result, puzzle, or idea that you found genuinely surprising or beautiful:**
+**4. Describe a mathematical result, puzzle, or idea that you found genuinely surprising or beautiful (can be simple too don't worry):**
 
 &nbsp;
 
@@ -58,11 +58,6 @@ Algebra | Calculus | Statistics | Probability | Trigonometry | Vectors | Matrice
 
 &nbsp;
 
-**7. Have you used any mathematical software? (MATLAB, Mathematica, Python + NumPy, Geogebra, etc.)**
-
-&nbsp;
-
----
 
 ## Part 3 — Interests and Goals
 
@@ -85,13 +80,13 @@ ___ Computation (writing algorithms, exploring with code)
 
 &nbsp;
 
-**11. What do you hope to get out of this week?**
+**11. What do you hope to get out of this internship?**
 
 &nbsp;
 
 &nbsp;
 
-**12. Is there anything you are nervous or uncertain about coming into this week?**
+**12. Is there anything you are nervous or uncertain about coming into this internship?**
 
 &nbsp;
 
@@ -99,33 +94,56 @@ ___ Computation (writing algorithms, exploring with code)
 
 ---
 
-## Part 4 — Quick Mathematical Taste Test
+## Part 4 — Quick Aptitude Test
 
-*No pressure — attempt whatever you can. Skip freely. These are here so we know what level to pitch the discussions.*
+*No pressure — attempt whatever you can. Skip freely. These are here so we know how to pace your experience in this program.*
 
-**Q1.** In how many ways can you arrange the letters A, B, C, D in a row?
-
-&nbsp;
-
-**Q2.** Prove that the sum of any two consecutive integers is always odd.
+**Q1.** Have you ever read a research paper before? Which one was it, if so? Explain. 
 
 &nbsp;
 
 &nbsp;
 
-**Q3.** A graph has 7 vertices. Every vertex has degree 3. How many edges does the graph have?
+&nbsp;
+
+**Q2.** What does the term "literature review" mean to you?
 
 &nbsp;
 
-**Q4.** I have a sequence: 1, 1, 2, 3, 5, 8, 13, 21, ... What comes next? What is the pattern?
+&nbsp;
 
 &nbsp;
 
-**Q5 (Challenge).** Ten points are placed in the plane, no three on the same line. How many line segments can be drawn connecting pairs of these points?
+&nbsp;
+
+**Q3.** When you hear the word "Network" or "Graph" in a math or computer science context, what visual comes to your mind?
 
 &nbsp;
 
-**Q6 (Open-ended).** What is the largest number of regions that 4 straight lines can divide a plane into?
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+
+**Q4.** In a 4-person group project that involves reading papers, writing papers, analyzing data, and designing visuals/presentations, which role do you naturally gravitate towards and why?
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+**Q5 (Open-ended).** Is there an idea within Computer Science (any subfield) that has always interested you, which you want to dive deep into for research?   
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
 
 &nbsp;
 

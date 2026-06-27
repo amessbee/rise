@@ -48,12 +48,12 @@ Run in your browser — no installation needed.
 
 Open in Google Colab (free, no installation) or download for Jupyter.
 
-| Notebook                                                      | Topics                                            |                                                                                                                                                                                |
-| ------------------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Notebook                                                      | Topics                                            |                                                                                                                                                |
+| ------------------------------------------------------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
 | [Zero Forcing](notebooks/zero_forcing.ipynb)                  | NetworkX, Z(G), propagation animation             | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/zero_forcing.ipynb)    |
 | [Centerpoint & Tukey Depth](notebooks/centerpoint.ipynb)      | Point clouds, depth computation, visualisation    | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/centerpoint.ipynb)     |
 | [Sequences & Erdős–Szekeres](notebooks/sequences_erdos.ipynb) | Patience sorting, tight examples, 2D subsequences | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/amessbee/rise/blob/main/notebooks/sequences_erdos.ipynb) |
-
+| [Graph Theory Networking](https://colab.research.google.com/drive/1ra0HqAxoRvdXzdqeGkK_W4xGr2HiuAQk?usp=sharing) | Graph foundations, topologies, degree centrality | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1ra0HqAxoRvdXzdqeGkK_W4xGr2HiuAQk?usp=sharing) |
 ---
 
 ## Open Problems
