@@ -47,14 +47,14 @@ Each session is led by one student coordinator. **Claim a day** by replacing `�
 
 | Day | Week | Theme | Handout / Demo | Host |
 |-----|------|-------|---------------|------|
-| 1 | W1 Mon | Welcome, Survey, Graph Introduction | [Networks Intro](handouts/networks_intro.md) | — |
-| 2 | W1 Tue | Graph Families, Trees, Bipartite | [Networks Intro](handouts/networks_intro.md) | — |
-| 3 | W1 Wed | Coloring, Planarity, Euler's Formula | [Networks Intro](handouts/networks_intro.md) | — |
-| 4 | W1 Thu | Problem Session + Mini-Presentations | — | — |
-| 5 | W2 Mon | Controllability Motivation + Zero Forcing Intro | [Zero Forcing](handouts/zero_forcing.md) · [Game](interactive/zero_forcing_game.html) | — |
-| 6 | W2 Tue | Computing Z(G): Bounds and Examples | [Zero Forcing](handouts/zero_forcing.md) · [Notebook](notebooks/zero_forcing.ipynb) | — |
-| 7 | W2 Wed | Zero Forcing Game + Propagation Sequences | [PMI Grid](interactive/pmi_grid.html) | — |
-| 8 | W2 Thu | Problem Session + Mini-Presentations | — | — |
+| 1 | W1 Mon | Welcome, Survey, Graph Introduction | [Networks Intro](handouts/networks_intro.md) | Danish, Uzayr |
+| 2 | W1 Tue | Graph Families, Trees, Bipartite | [Networks Intro](handouts/networks_intro.md) | Danish, Uzayr |
+| 3 | W1 Wed | Coloring, Planarity, Euler's Formula | [Networks Intro](handouts/networks_intro.md) | Danish, Uzayr |
+| 4 | W1 Thu | Problem Session + Mini-Presentations | — | Danish, Uzayr |
+| 5 | W2 Mon | Controllability Motivation + Zero Forcing Intro | [Zero Forcing](handouts/zero_forcing.md) · [Game](interactive/zero_forcing_game.html) | Uzayr, Danish|
+| 6 | W2 Tue | Computing Z(G): Bounds and Examples | [Zero Forcing](handouts/zero_forcing.md) · [Notebook](notebooks/zero_forcing.ipynb) | Uzayr, Danish |
+| 7 | W2 Wed | Zero Forcing Game + Propagation Sequences | [PMI Grid](interactive/pmi_grid.html) | Uzayr, Danish |
+| 8 | W2 Thu | Problem Session + Mini-Presentations | — | Uzayr, Danish|
 | 9 | W3 Mon | Sequences, Patience Sorting, Erdős–Szekeres | [Sequences & PMI](handouts/sequences_pmi.md) · [Demo](interactive/sequences.html) | — |
 | 10 | W3 Tue | PMI Sequences + Controllability Connection | [Sequences & PMI](handouts/sequences_pmi.md) · [Notebook](notebooks/sequences_erdos.ipynb) | — |
 | 11 | W3 Wed | Centerpoint Theorem | [Centerpoint](handouts/centerpoint.md) · [Demo](interactive/centerpoint.html) | — |
