@@ -23,6 +23,7 @@ Day-by-day schedule, facilitator notes, problem sets, and student host assignmen
 |     | Handout                                                                    | When       |
 | --- | -------------------------------------------------------------------------- | ---------- |
 | 1   | [Background Survey](handouts/survey.md)                                    | Day 1      |
+| 1b  | [Aptitude Survey](handouts/survey2.md)                                     | Day 1      |
 | 2   | [Introduction to Graphs and Networks](handouts/networks_intro.md)          | Days 1–2   |
 | 3   | [Zero Forcing Sets and the Controllability Game](handouts/zero_forcing.md) | Days 5–7   |
 | 4   | [Sequences, Subsequences, and PMI](handouts/sequences_pmi.md)              | Days 9–10  |
