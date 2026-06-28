@@ -11,6 +11,7 @@
 | **June 24** | 7:00 PM – 7:10 PM | In-Person | Dr. Mudassir, Danish |
 | **June 25** | 2:45 PM – 3:20 PM | Zoom | Dr. Mudassir, Uzayr, Danish |
 | **June 26** | 11:30 PM – 1:00 AM | Zoom | Uzayr, Danish |
+| **June 27** | 10:30PM - 11:30PM | Zoom | Uzayr, Danish | 
 
 ---
 
