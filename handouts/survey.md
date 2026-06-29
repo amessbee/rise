@@ -331,7 +331,7 @@ If yes, describe it briefly. What was the hardest part to understand?
 ---
 
 
-## Part 6 — Goals and Self-Assessment
+## Part 7 — Goals and Self-Assessment
 
 **Q1.** Which of the following best describes what you want most from this internship? _(Rank 1–4, with 1 being most important)_
 
