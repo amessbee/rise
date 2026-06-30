@@ -134,7 +134,14 @@
   * Kids unable to do a single question. Hate math vocally demand a change asking for research.
   * I explain they need some foundations of topics, but agree to tone down math as no progress.
  
-### 💻 June 30 | Maaz, Ahsan, Uzayr, Danish | 
+### 🗣️ June 30 | Maaz, Danish
+* **Time:** 2:30 PM – 3:00 PM
+* **Medium:** In-Person
+* **Discussion Notes:**
+  * I asked him to take a more proactive role as Uzayr's theoretical teachings alone is overloading kids.
+  * He agreed and gave an idea inclined towards Data Science, something I'm unsure of, but generally we agree for the need of a transformation. 
+ 
+### 🗣️ June 30 | Maaz, Ahsan, Uzayr, Danish | 
 * **Time:** 3:00PM - 3:40PM
 * **Medium:** In-Person
 * **Discussion Notes:**
