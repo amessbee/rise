@@ -14,6 +14,14 @@
 | **June 27** | 10:30PM - 11:30PM | Zoom | Uzayr, Danish | 
 | **June 29** | 2:00PM - 3:30PM | Class | Everyone | 
 | **June 29** | 10:30PM - 11:30PM | Zoom | Uzayr, Danish | 
+| **June 30** | 11:00AM - 2:30PM | Class | Everyone | 
+| **June 30** | 2:30PM - 3:00PM | In-Person | Maaz, Danish | 
+| **June 30** | 3:00PM - 3:40PM | In-Person | Maaz, Ahsan, Uzayr, Danish | 
+
+
+
+
+
 
 
 ---
@@ -85,4 +93,60 @@
   * Dr. Mudassir shared further resources for the Center Point Theorem.
   * First two weeks led by Uzayr and other student hosts will join periodically to ensure everyone is represented from the team.
   * Idea of converting Thursday to a Research Paper Reading seminar. Dr. Mudassir's valid concerns over novelty and complexity. Find easier literature for them.
-  * 4 Students Confirmed for 2 PM on Monday. 
+  * 4 Students Confirmed for 2 PM on Monday.
+ 
+### 💻 June 26 | Uzayr, Danish
+* **Time:** 11:30 PM – 1:00 AM
+* **Medium:** Zoom
+* **Discussion Notes:**
+  * Uzayr showed me his SProj, mostly theoretical.
+  * Discussed some logistics like splitting time so he can take a break
+  * So far, 1-2 weeks theoretical then maybe a project
+
+### 💻 June 27 | Uzayr, Danish
+* **Time:** 10:30 PM – 11:30 PM
+* **Medium:** Zoom
+* **Discussion Notes:**
+  * Uzayr showed me the problems he made.
+  * First day schedule finalized with my presentation slides and then the combined survey.
+ 
+### 🗣️ June 29 | Class
+* **Time:** 2:00 PM – 3:30 PM
+* **Medium:** In-Person
+* **Discussion Notes:**
+  * Kids more inclined towards AI/ML, CyberSec.
+  * Kids hated the math portion of survey; logical puzzles
+
+
+### 💻 June 29 | Uzayr, Danish
+* **Time:** 10:30 PM – 11:30 PM
+* **Medium:** Zoom
+* **Discussion Notes:**
+  * Uzayr prepared solutions for survey math. 
+  * Basic Graph Theory topics to be covered.
+ 
+### 🗣️ June 30 | Class
+* **Time:** 11:00 AM – 2:30 PM
+* **Medium:** In-Person
+* **Discussion Notes:**
+  * Uzayr mostly leading it.
+  * Uzayr said he covered Proof by Induction, Contradiction somewhat, Graph Theory (Definitions, Handshaking Lemma, Trees, Bipartite Graphs)
+  * Kids unable to do a single question. Hate math vocally demand a change asking for research.
+  * I explain they need some foundations of topics, but agree to tone down math as no progress.
+ 
+### 💻 June 30 | Maaz, Ahsan, Uzayr, Danish | 
+* **Time:** 3:00PM - 3:40PM
+* **Medium:** In-Person
+* **Discussion Notes:**
+  * No use in continuing with theory. Uzayr says if it's ML applied to the side, others should contribute.
+  * I ask Maaz and Ahsan. Both are very busy with existing projects but agree to transform them into Applied areas. Specifically, AIML.
+  * Uzayr will teach mathematics behind ML like LA, Matrix Multiplication, Eigen Values for remainder of this week.
+  * Then, they can take it from there. A week of ML code (sickitt learn, pandas).
+  * Then, a project. CNN for person detection idea.
+  * I do feel like I'm getting the heat for going with something more research-oriented and asking to tone down theoretic side. 
+ 
+
+
+
+ 
+
